@@ -27,6 +27,7 @@ module.exports = {
   siteDescription: 'Webpage für Privater Automarkt in Radolfzell',
   siteUrl: 'https://billig-car.de',
   plugins: [
+      'gridsome-plugin-robots-txt',
       {
       use: '@gridsome/plugin-sitemap',
       options: {
@@ -72,7 +73,6 @@ module.exports = {
             priority: 0.5,
             lastmod: '2021-01-07',
           },
-
         }
       }
     }
