@@ -11,7 +11,7 @@
           <g-link class="nav--link" to="/">Home</g-link>
           <g-link class="nav--link" to="/cars">Unsere Autos</g-link>
           <g-link class="nav--link" to="/contact">Kontakt</g-link>
-          <g-link class="nav--link" to="/financing">Finanzierumg</g-link>
+          <g-link class="nav--link" to="/financing">Finanzierung</g-link>
           <g-link class="nav--link" to="/impressum">Impressum</g-link>
           <g-link class="nav--link" to="/location">Standort</g-link>
           <g-link class="nav--link" to="/services">Dienstleistungen</g-link>
