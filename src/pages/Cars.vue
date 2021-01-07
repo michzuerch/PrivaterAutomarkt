@@ -3,7 +3,6 @@
     <Section>
         <Article>
             <h1>Unsere Autos</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
             <div>
                 <iframe
                     src="https://home.mobile.de/PRIVATERAUTOMARKTRADOLFZELL#ses;partnerHead=false"

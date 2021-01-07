@@ -3,7 +3,16 @@
     <Section>
         <Article>
             <h1>Kontakt</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+            <p>            
+            Manfred Schlett
+
+            Herrenlandstr. 39
+            78315 Radolfzell
+            Tel.  +49 - (0)7732-942407
+            Fax. +49 - (0)7732-942408
+            Email. info@billig-car.de
+            Industriegebiet West, gegenüber KAWASAKI +AUTO BOSCH DIENST
+            </p>
         </Article>
     </Section>
   </Layout>
