@@ -1,17 +1,14 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/michzuerch/PrivaterAutomarkt)
 
-# Default starter for Gridsome
-
-This is the project you get when you run `gridsome create new-project`.
+# Website Privater Automarkt
 
 ### 1. Install Gridsome CLI tool if you don't have
 
 `npm install --global @gridsome/cli`
 
-### 2. Create a Gridsome project
+### 2. Build
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
-# PrivaterAutomarkt
+1. `gridsome develop` to run the development version
+2. `gridsome build` to create the production version
+
+# Privater Automarkt Radolfzell 2021
