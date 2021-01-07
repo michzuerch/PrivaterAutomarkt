@@ -12,18 +12,49 @@ module.exports = {
       {
       use: '@gridsome/plugin-sitemap',
       options: {
-        exclude: ['/exclude-me'],
+        exclude: ['/exclude'],
         config: {
-          '/articles/*': {
+          '/': {
             changefreq: 'weekly',
             priority: 0.5,
-            lastmod: '2020-02-19',
+            lastmod: '2021-01-07',
           },
-          '/about': {
-            changefreq: 'monthly',
-            priority: 0.7,
-            lastmod: '2020-05-12',
-          }
+          '/cars': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/contact': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/financing': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/impressum': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/location': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/registration': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/services': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+
         }
       }
     }
