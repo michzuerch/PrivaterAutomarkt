@@ -11,7 +11,11 @@ export default function (Vue, { router, head, isClient }) {
     head.htmlAttrs = { lang: 'de' }
     head.meta.push({
         name: 'keywords',
-        content: 'Autohandel Gebrauchtwagen Billig'
+        content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
+    })
+    head.meta.push({
+        name: 'description',
+        content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
     })
 
     Vue.use(BootstrapVue)
