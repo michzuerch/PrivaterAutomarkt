@@ -87,7 +87,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 8080
   },
-    chainWebpack (config) {
+  chainWebpack (config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
@@ -99,5 +99,8 @@ module.exports = {
     types.forEach(type => {
         addStyleResource(config.module.rule('scss').oneOf(type))
     })
-    }
+  },
+  icon: {
+    favicon: './src/favicon.png'
+  }
 }
