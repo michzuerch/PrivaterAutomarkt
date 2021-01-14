@@ -1,11 +1,10 @@
 <template>
-  <div class="layout">
-    <ResponsiveMenuPartial :show-responsive-menu="showResponsiveMenu" @closeResponsiveMenu="closeResponsiveMenu" />
-    <HeaderPartial @openResponsiveMenu="openResponsiveMenu" />
-    <div class="min-h-screen">
-      <slot />
-    </div>
-    <FooterPartial />
+  <div id="app" class="dark:bg-black">
+    <navbar @setTheme="setTheme" :theme="this.theme"></navbar>
+
+    <slot />
+
+    <v-footer></v-footer>
   </div>
 </template>
 
@@ -18,33 +17,22 @@ query {
 </static-query>
 
 <script>
-import HeaderPartial from '~/layouts/partials/Header'
-import FooterPartial from '~/layouts/partials/Footer'
-import ResponsiveMenuPartial from '~/layouts/partials/ResponsiveMenu'
-
+import Navbar from "~/components/Navbar/Navbar.vue";
+import VFooter from "~/components/Partials/Footer.vue";
 export default {
-  components: {
-    HeaderPartial,
-    FooterPartial,
-    ResponsiveMenuPartial
-  },
-  data: function () {
+  data: function() {
     return {
-      showResponsiveMenu: false
+      theme: "light"
     };
   },
-  watch: {
-    $route (to, from) {
-      this.closeResponsiveMenu();
-    }
+  components: {
+    Navbar,
+    VFooter
   },
   methods: {
-    openResponsiveMenu () {
-      this.showResponsiveMenu = true;
-    },
-    closeResponsiveMenu () {
-      this.showResponsiveMenu = false;
+    setTheme(mode) {
+      this.theme = mode;
     }
   }
-}
+};
 </script>
