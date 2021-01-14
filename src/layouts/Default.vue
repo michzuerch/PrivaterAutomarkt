@@ -1,44 +1,50 @@
 <template>
   <div class="layout">
-    <div id="content-wrapper">
-      <Header/>
-      <slot/>
+    <ResponsiveMenuPartial :show-responsive-menu="showResponsiveMenu" @closeResponsiveMenu="closeResponsiveMenu" />
+    <HeaderPartial @openResponsiveMenu="openResponsiveMenu" />
+    <div class="min-h-screen">
+      <slot />
     </div>
-    <Footer/>
+    <FooterPartial />
   </div>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+}
+</static-query>
+
 <script>
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import HeaderPartial from '~/layouts/partials/Header'
+import FooterPartial from '~/layouts/partials/Footer'
+import ResponsiveMenuPartial from '~/layouts/partials/ResponsiveMenu'
+
 export default {
   components: {
-    Footer,
-    Header,
+    HeaderPartial,
+    FooterPartial,
+    ResponsiveMenuPartial
   },
+  data: function () {
+    return {
+      showResponsiveMenu: false
+    };
+  },
+  watch: {
+    $route (to, from) {
+      this.closeResponsiveMenu();
+    }
+  },
+  methods: {
+    openResponsiveMenu () {
+      this.showResponsiveMenu = true;
+    },
+    closeResponsiveMenu () {
+      this.showResponsiveMenu = false;
+    }
+  }
 }
 </script>
-
-
-<style lang="scss">
-body, html {
-  height: 100%;
-}
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-#app {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-#content-wrapper {
-  flex: 1 0 auto;
-  max-width: 950px;
-  width: 90vw;
-  margin: 0 auto;
-}
-</style>

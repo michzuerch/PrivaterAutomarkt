@@ -1,14 +1,29 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/michzuerch/PrivaterAutomarkt)
+<hr />
 
-# Website Privater Automarkt
+## Website Privater Automarkt Radolfzell
 
-### 1. Install Gridsome CLI tool if you don't have
+Diese Seite wurde mit dem JAM-Stack Tool gridsome erstellt.
 
-`npm install --global @gridsome/cli`
+## Key features
 
-### 2. Build
+- Built with Tailwind CSS
+- Responsive
+- Fulltext search
+- Dynamic custom pages
+- Pagination
+- Different content types for articles and news
+- Syntax Highlighting via PrismJS
 
-1. `gridsome develop` to run the development version
-2. `gridsome build` to create the production version
+## Installation
 
-# Privater Automarkt Radolfzell 2021
+Um die Seite zu erstellen folgendes ausführen:
+
+```
+gridsome develop
+```
+
+oder für die Produktivversion:
+
+```
+gridsome build
+```

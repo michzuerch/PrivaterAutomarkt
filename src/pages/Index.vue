@@ -1,47 +1,55 @@
 <template>
   <Layout>
-    <Section>
-        <Article>
-            <div class="container">
-                <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-                <g-image alt="Example image" src="~/favicon.png" width="135" />
+    <PageHeader>
+      <template v-slot:image>
+        <g-image src="~/assets/images/marvin-meyer-SYTO3xs06fU-unsplash.jpg" />
+      </template>
+      <template v-slot:content>
+        <p class="text-4xl md:text-6xl">
+          Ready. Set. Learn.
+        </p>
+        <p class="text-lg md:text-2xl">
+          It's never too late to learn something new!
+        </p>
+      </template>
+    </PageHeader>
+    <div class="container text-center mx-auto">
+      <SectionLatestArticles />
+    </div>
 
-                <h1>Herzlich Willkommen!</h1>
-                <h2>Gebrauchtwagen ab 500,- € ---Finanzierung ab 1000,- €</h2>
-                <p>
-                Wir verkaufen auch Ihr Auto!!!
-                </p>
-                <h2>Privat an Privat = günstig</h2>
-                <p>
-                <h3>Öffnungszeiten:</h3>
-                Montag – Freitag : 10.00 - 18.00 Uhr<br>
-                Samstag                : 10.00 - 14.00 Uhr
-                </p>
-                <p>
-                Manfred Schlett<br>
-                Herrenlandstr. 39<br>
-                78315 Radolfzell<br>
-                Tel.  +49 - (0)7732-942407<br>
-                Fax. +49 - (0)7732-942408<br>
-                email. info@billig-car.de<br>
-                Industriegebiet West, gegenüber KAWASAKI +AUTO BOSCH DIENST<br>
-                </p> 
-            </div>
-        </Article>
-    </Section>
+    <SectionContribute />
+
+    <SectionThinkDifferent />
+    
+    <div class="container text-center mx-auto">
+      <SectionLatestNews />
+    </div>
+
+    
+
+    <SectionOpenSource />
   </Layout>
 </template>
 
 <script>
+import PageHeader from '~/components/PageHeader'
+import SectionLatestArticles from '~/components/sections/LatestArticles'
+import SectionLatestNews from '~/components/sections/LatestNews'
+import SectionContribute from '~/components/sections/Contribute'
+import SectionThinkDifferent from '~/components/sections/ThinkDifferent'
+import SectionOpenSource from '~/components/sections/OpenSource'
+
 export default {
   metaInfo: {
-    title: 'Privater Automarkt'
+    title: 'Learn something new'
+  },
+  components: {
+    PageHeader,
+    SectionLatestArticles,
+    SectionLatestNews,
+    SectionContribute,
+    SectionThinkDifferent,
+    SectionOpenSource
   }
-}
+};
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

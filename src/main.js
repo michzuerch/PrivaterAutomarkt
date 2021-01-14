@@ -2,23 +2,12 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
-import BootstrapVue from 'bootstrap-vue'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'prismjs/themes/prism.css'
+import '~/assets/scss/main.scss'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 export default function (Vue, { router, head, isClient }) {
-    head.htmlAttrs = { lang: 'de' }
-    head.meta.push({
-        name: 'keywords',
-        content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
-    })
-    head.meta.push({
-        name: 'description',
-        content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
-    })
-
-    Vue.use(BootstrapVue)
-    // Set default layout as a global component
-    Vue.component('Layout', DefaultLayout)
+  // Set default layout as a global component
+  Vue.component('Layout', DefaultLayout)
 }
