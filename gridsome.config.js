@@ -5,9 +5,59 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
-  siteDescription: "An open-source framework to generate awesome pages",
+  siteName: 'Privater Automarkt',
+  siteDescription: 'Webpage für Privater Automarkt in Radolfzell',
+  siteUrl: 'https://billig-car.de',
   plugins: [
+    'gridsome-plugin-robots-txt',
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        exclude: ['/exclude'],
+        config: {
+          '/': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/cars': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/contact': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/financing': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/impressum': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/location': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/registration': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+          '/services': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-07',
+          },
+        }
+      }
+    },
     {
       use: 'gridsome-plugin-tailwindcss',
       options: {
