@@ -86,9 +86,6 @@
 
         <div class="inline-block">
           <ul class="list-none flex justify-center md:justify-end">
-            <li class="mr-6">
-              <search-button v-on="$listeners"></search-button>
-            </li>
             <li>
               <theme-switcher v-on="$listeners" :theme="theme" />
             </li>
@@ -100,7 +97,6 @@
 
 <script>
 import ThemeSwitcher from "~/components/Navbar/ThemeSwitcher.vue";
-import SearchButton from "~/components/Navbar/SearchButton.vue";
 import Subnavigation from "~/components/Navbar/NavbarSubNavigation.vue";
 
 export default {
@@ -115,7 +111,6 @@ export default {
   },
   components: {
     ThemeSwitcher,
-    SearchButton,
     Subnavigation  
   },
   props: {

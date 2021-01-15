@@ -3,40 +3,8 @@
     <div class="container mx-auto py-16">
       <div class="mb-4">
         <p>
-          Copyright {{ new Date().getFullYear() }} by {{ $static.metadata.siteName}} &middot; Powered by
-          <a
-            href="https://www.gridsome.org"
-            target="_blank"
-          >Gridsome</a>
+          Copyright {{ new Date().getFullYear() }} by {{ $static.metadata.siteName}} &middot; 
         </p>
-      </div>
-      <div class="mb-4">
-        <ul class="list-reset flex justify-center">
-          <li v-for="socialItem in $static.metadata.social" :key="socialItem.name" class="px-4">
-            <a :href="socialItem.link" target="_blank" :title="socialItem.name" class="hover:text-blue-500">
-              <font-awesome :icon="icon(socialItem.icon)" size="lg"></font-awesome>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <ul class="list-reset flex justify-center">
-          <li v-for="navItem in $static.metadata.footerNavigation" :key="navItem.name" class="px-4">
-            <g-link
-              :to="navItem.link"
-              :title="navItem.name"
-              v-if="navItem.external!=true"
-              class="hover:text-blue-500"
-            >{{ navItem.name}}</g-link>
-            <a
-              :href="navItem.link"
-              target="_blank"
-              :title="navItem.name"
-              v-if="navItem.external==true"
-              class="hover:text-blue-500 "
-            >{{ navItem.name}}</a>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
