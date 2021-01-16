@@ -3,8 +3,16 @@
       class="hidden md:block lg:block xl:block items-center justify-between flex-wrap container mx-auto py-3 z-20 dark:text-gray-400"
     >
       <div class="flex-grow flex items-center w-auto mx-4">
-        <div class="flex items-center flex-shrink-0 mr-6">
-          <span class="font-semibold text-xl tracking-tight">{{ $static.metadata.siteName }}</span>
+
+
+        <div class="flex mr-6">
+          <g-image
+            class="w-9 h-9 rounded-lg bg-gray-200"
+            alt="Company Logo" 
+            src="~/favicon.png" 
+            width="150"
+          />
+          <span class="font-semibold text-xl tracking-tight ml-2">{{ $static.metadata.siteName }}</span>
         </div>
         <div class="flex-grow">
           <ul class="list-none flex justify-left">
