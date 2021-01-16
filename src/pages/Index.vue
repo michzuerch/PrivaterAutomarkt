@@ -9,11 +9,8 @@
 
       <div class="container mx-auto">
           <div class="flex flex-wrap my-4">
-
-          <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>
-
-        
-          <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
+            <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>       
+            <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
         </div>
       </div>
   </Layout>

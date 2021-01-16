@@ -7,7 +7,7 @@
 module.exports = {
   siteName: 'Privater Automarkt',
   siteDescription: 'Webpage für Privater Automarkt in Radolfzell',
-  siteUrl: 'https://billig-car.de',
+  siteUrl: 'https://www.billig-car.de',
   plugins: [
     'gridsome-plugin-robots-txt',
     {

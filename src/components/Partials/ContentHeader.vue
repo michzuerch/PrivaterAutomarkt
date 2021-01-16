@@ -11,7 +11,7 @@
         :src="require(`!!assets-loader!@pageImage/${image}`)"
         width="1400"
         height="400"
-        class="object-cover absolute -z-10 h-full w-full"
+        class="object-contain absolute -z-10 h-full w-full"
       ></g-image>
 
       <g-image
@@ -19,7 +19,7 @@
         :src="image"
         width="1400"
         height="400"
-        class="object-cover absolute -z-10 h-full w-full"
+        class="object-contain absolute -z-10 h-full w-full"
       ></g-image>
 
       <slot>

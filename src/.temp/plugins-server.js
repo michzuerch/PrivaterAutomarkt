@@ -8,6 +8,6 @@ export default [
   },
   {
     run: plugin_gridsome_plugin_flexsearch_12,
-    options: {"pathPrefix":"","siteUrl":"https://billig-car.de","searchFields":["title","content"],"collections":[{"typeName":"Blog","indexName":"Blog","fields":["title","category","excerpt","content"]}],"chunk":false,"compress":false,"autoFetch":true,"autoSetup":true,"flexsearch":{"profile":"default"}}
+    options: {"pathPrefix":"","siteUrl":"https://www.billig-car.de","searchFields":["title","content"],"collections":[{"typeName":"Blog","indexName":"Blog","fields":["title","category","excerpt","content"]}],"chunk":false,"compress":false,"autoFetch":true,"autoSetup":true,"flexsearch":{"profile":"default"}}
   }
 ]
