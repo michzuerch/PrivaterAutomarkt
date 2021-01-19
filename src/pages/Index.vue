@@ -3,14 +3,16 @@
       <content-header 
         :title="$static.metadata.siteName" 
         :sub="$static.metadata.siteDescription"
-        image="hero.jpg">
-        
+        image="phoenix-han-Nqdh0G8rdCc-unsplash.jpg">
       </content-header>
 
       <div class="container mx-auto">
           <div class="flex flex-wrap my-4">
-            <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>       
-            <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
+
+          <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>
+
+        
+          <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
         </div>
       </div>
   </Layout>
@@ -93,7 +95,7 @@ import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   metaInfo: {
-    title: "Privater Automarkt Radolfzell"
+    title: "Hello, world!"
   },
   components: {
     CardItem,

@@ -1,7 +1,7 @@
 <template>
     <nav class="block md:hidden flex items-center justify-between flex-wrap container mx-auto py-4 dark:text-gray-400">
       <div class="block flex-grow flex items-center w-auto mx-4">
-        <div class="flex mr-6">
+        <div class="flex items-center flex-shrink-0 mr-6">
           <a
             role="button"
             @click.prevent="openNavbarModal()"
@@ -12,19 +12,14 @@
           </a>
         </div>
         <div class="flex-grow text-center font-bold text-lg">
-          <div class="flex">
-          <g-image
-            class="w-8 h-8 rounded-lg bg-gray-200 mr-3"
-            alt="Company Logo" 
-            src="~/favicon.png" 
-            width="150"
-          />
           <span class="font-semibold text-xl tracking-tight">{{ $static.metadata.siteName }}</span>
-          </div>
         </div>
 
         <div class="inline-block">
           <ul class="list-none flex justify-center md:justify-end">
+            <li class="mr-6">
+              <search-button v-on="$listeners"></search-button>
+            </li>
             <li>
               <theme-switcher v-on="$listeners" :theme="theme" />
             </li>
@@ -36,6 +31,7 @@
 
 <script>
 import ThemeSwitcher from "~/components/Navbar/ThemeSwitcher.vue";
+import SearchButton from "~/components/Navbar/SearchButton.vue";
 
 export default {
   props: {
@@ -47,7 +43,8 @@ export default {
     }
   },
   components: {
-    ThemeSwitcher
+    ThemeSwitcher,
+    SearchButton
   },
   methods: {
     openNavbarModal() {

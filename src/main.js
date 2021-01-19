@@ -42,16 +42,6 @@ export default function (Vue, {
   head,
   isClient
 }) {
-  head.htmlAttrs = { lang: 'de' }
-  head.meta.push({
-      name: 'keywords',
-      content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
-  })
-  head.meta.push({
-      name: 'description',
-      content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
-  })
-
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
@@ -69,6 +59,4 @@ export default function (Vue, {
     Vue.component('v-popover', VPopover)
     Vue.use(InfiniteLoading)
   }
-
-
 }

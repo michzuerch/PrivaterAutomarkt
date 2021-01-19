@@ -1,7 +1,0 @@
-*.log
-.DS_Store
-node_modules
-.cache
-coverage
-dist
-pnp-e2e
