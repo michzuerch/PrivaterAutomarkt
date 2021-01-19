@@ -1,6 +1,15 @@
 {
   "name": "privaterautomarkt",
   "private": true,
+  "version": "0.1",
+  "description": "Website Privater Automarkt Radolfzell",
+  "license": "no license",
+  "author": {
+    "name": "Michael Zuercher",
+    "email": "michzuerch@gmail.com",
+    "url": "https://michzuerch.github.io"
+  },
+
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
@@ -11,23 +20,23 @@
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.2.1",
     "gridsome": "^0.7.23",
     "gridsome-plugin-flexsearch": "^1.0.5",
     "gridsome-plugin-remark-prismjs-all": "^0.3.5",
     "gridsome-plugin-robots-txt": "^1.0.2",
-    "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
+    "gridsome-source-static-meta": "^1.0.1",
     "hooper": "^0.3.4",
     "medium-zoom": "^1.0.6",
     "minimist": "^1.2.5",
     "node-sass": "^5.0.0",
     "pluralize": "^8.0.0",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.4",
     "postcss-import": "latest",
     "prism-themes": "^1.5.0",
     "remark-attr": "^0.11.1",
     "rfs": "^9.0.3",
-    "sass-loader": "^10.1.0",
+    "sass-loader": "^10.1.1",
     "tailwindcss": "^2.0.2",
     "v-click-outside": "^3.1.2",
     "v-tooltip": "^2.1.2",
@@ -36,9 +45,9 @@
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "tailwindcss-dark-mode": "^1.1.7"
