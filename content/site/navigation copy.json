@@ -21,6 +21,27 @@
       "external": false
     },
 
+    // {
+    //   "name": "More",
+    //   "link": "#",
+    //   "children": [
+    //     {
+    //       "name": "Theme Repository",
+    //       "link": "https://www.github.com/jammeryhq/gridsome-starter-liebling",
+    //       "external": true
+    //     },
+    //     {
+    //       "name": "Gridsome Docs",
+    //       "link": "https://www.gridsome.org/docs",
+    //       "external": true
+    //     },
+    //      {
+    //        "name": "Internal Page ( About )",
+    //        "link": "/about-us",
+    //        "external": false
+    //      }
+    //   ]
+    // }
   ],
   "footerNavigation": [
     {

@@ -9,6 +9,10 @@
     "email": "michzuerch@gmail.com",
     "url": "https://michzuerch.github.io"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michzuerch/PrivaterAutomarkt"
+  },
 
   "scripts": {
     "build": "gridsome build",

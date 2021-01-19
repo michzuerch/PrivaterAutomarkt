@@ -134,6 +134,14 @@ export default [
     component: c6
   },
   {
+    path: "/kontakt/",
+    component: c7
+  },
+  {
+    path: "/financing/",
+    component: c7
+  },
+  {
     path: "/about-us/",
     component: c7
   },
