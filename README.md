@@ -1,21 +1,7 @@
-<div align="center">
+# Webseite Privater Automarkt Radolfzell
 
-<a href="https://www.jammeryhq.com" title="JammeryHQ" target="_blank">
+Diese Seite wird mit gridsome erstellt. Folgender Starter wurde verwendet: https://github.com/jammeryhq/gridsome-starter-liebling.
 
-  <img src="https://jammeryhq.com/jammeryhq.png" width="128" />
-  
-</a>
-
-<p>
-Fast-track your JAMstack development & learning
-</p>
-</div>
-
-<hr />
-
-# About this starter
-
-Gridsome starter based on the Liebling theme for Ghost. Content is added via markdown, while Tailwind CSS is used for the layout/styling.
 
 ## Key features
 
@@ -31,11 +17,19 @@ Gridsome starter based on the Liebling theme for Ghost. Content is added via mar
 
 ## Installation
 
-Run the following command to create a new gridsome project 
+Die Entwicklungsumbebung wir gestartet mit:
 
 ```
-gridsome create my-blog https://github.com/jammeryhq/gridsome-starter-liebling
+gridsome develop
 ```
+
+Um die Produktiv-Version zu erstellen:
+
+```
+gridsome build
+```
+
+
 
 ## Credits
 

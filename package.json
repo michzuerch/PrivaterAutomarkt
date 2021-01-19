@@ -1,6 +1,18 @@
 {
-  "name": "PrivaterAutomarkt",
+  "name": "privaterautomarkt",
   "private": true,
+  "version": "0.1",
+  "description": "Website Privater Automarkt Radolfzell",
+  "license": "no license",
+  "author": {
+    "name": "Michael Zuercher",
+    "email": "michzuerch@gmail.com",
+    "url": "https://michzuerch.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michzuerch/PrivaterAutomarkt"
+  },
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
@@ -34,9 +46,9 @@
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "tailwindcss-dark-mode": "^1.1.7"
