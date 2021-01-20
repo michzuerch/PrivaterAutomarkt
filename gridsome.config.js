@@ -1,6 +1,7 @@
 module.exports = {
   siteName: 'Privater Automarkt Radolfzell',
   siteDescription: "Privat an Privat = günstig",
+  siteUrl: "https://billig.car.de",
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
@@ -15,6 +16,32 @@ module.exports = {
         shouldImport: false,
         shouldTimeTravel: false,
         shouldPurgeUnusedKeyframes: true,
+      }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        exclude: ['/exclude-me'],
+        config: {
+          '/*': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2021-01-20',
+          },
+          '/posts/*': {
+            changefreq: 'daily',
+            priority: 0.7,
+            lastmod: '2021-01-20',
+          }
+        }
+      }
+    },
+    {
+      use: 'gridsome-plugin-robots',
+      options: {
+        host: 'https://billig-car.de',
+        sitemap: 'https://billig-car.de/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     {
@@ -68,7 +95,7 @@ module.exports = {
           {
             typeName: 'CustomPage',
             indexName: 'CustomPage',
-            fields: ['title', 'content']
+            fields: ['title', 'excerpt', 'content']
           }
       ]
       }

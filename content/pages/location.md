@@ -1,5 +1,6 @@
 ---
 title: Standort
+excerpt: Lorem markdownum aptos pes, Inachidos caput corrumpere! Vincere ferocia arva.
 ---
 
 ## Standort

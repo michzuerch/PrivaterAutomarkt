@@ -1,5 +1,6 @@
 ---
 title: About us
+excerpt: Lorem markdownum aptos pes, Inachidos caput corrumpere! Vincere ferocia arva.
 ---
 
 ## Ossa narrat sortita fecerat sit conataque
