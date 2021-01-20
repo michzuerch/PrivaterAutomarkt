@@ -129,7 +129,11 @@ export default [
     component: c5
   },
   {
-    path: "/title/",
+    path: "/zulassung/",
+    component: c6
+  },
+  {
+    path: "/standort/",
     component: c6
   },
   {
@@ -141,7 +145,11 @@ export default [
     component: c6
   },
   {
-    path: "/financing/",
+    path: "/finanzierung/",
+    component: c6
+  },
+  {
+    path: "/dienstleistungen/",
     component: c6
   },
   {

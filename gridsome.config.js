@@ -1,12 +1,6 @@
-// This is where project configuration and plugin options are located. 
-// Learn more: https://gridsome.org/docs/config
-
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
-
 module.exports = {
-  siteName: 'Gridsome',
-  siteDescription: "An open-source framework to generate awesome pages",
+  siteName: 'Privater Automarkt Radolfzell',
+  siteDescription: "Privat an Privat = günstig",
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
@@ -65,13 +59,20 @@ module.exports = {
       use: 'gridsome-plugin-flexsearch',
       options: {
         searchFields: ['title', 'content'],
-        collections: [{
-          typeName: 'Blog',
-          indexName: 'Blog',
-          fields: ['title', 'category', 'excerpt', 'content']
-        }]
+        collections: [
+          {
+            typeName: 'Blog',
+            indexName: 'Blog',
+            fields: ['title', 'category', 'excerpt', 'content']
+          },
+          {
+            typeName: 'CustomPage',
+            indexName: 'CustomPage',
+            fields: ['title', 'content']
+          }
+      ]
       }
-    }
+    },
   ],
   transformers: {
     remark: {

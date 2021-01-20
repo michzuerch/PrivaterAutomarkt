@@ -8,6 +8,6 @@ export default [
   },
   {
     run: plugin_gridsome_plugin_flexsearch_10,
-    options: {"pathPrefix":"","siteUrl":"","searchFields":["title","content"],"collections":[{"typeName":"Blog","indexName":"Blog","fields":["title","category","excerpt","content"]}],"chunk":false,"compress":false,"autoFetch":true,"autoSetup":true,"flexsearch":{"profile":"default"}}
+    options: {"pathPrefix":"","siteUrl":"","searchFields":["title","content"],"collections":[{"typeName":"Blog","indexName":"Blog","fields":["title","category","excerpt","content"]},{"typeName":"CustomPage","indexName":"CustomPage","fields":["title","content"]}],"chunk":false,"compress":false,"autoFetch":true,"autoSetup":true,"flexsearch":{"profile":"default"}}
   }
 ]

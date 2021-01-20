@@ -6,8 +6,33 @@
       "external": false
     },
     {
-      "name": "About",
-      "link": "/about-us",
+      "name": "Kontakt",
+      "link": "/kontakt",
+      "external": false
+    },
+    {
+      "name": "Finanzierung",
+      "link": "/finanzierung",
+      "external": false
+    },
+    {
+      "name": "Zulassung",
+      "link": "/zulassung",
+      "external": false
+    },
+    {
+      "name": "Standort",
+      "link": "/standort",
+      "external": false
+    },
+    {
+      "name": "Dienstleistungen",
+      "link": "/dienstleistungen",
+      "external": false
+    },
+    {
+      "name": "Impressum",
+      "link": "/impressum",
       "external": false
     },
     {

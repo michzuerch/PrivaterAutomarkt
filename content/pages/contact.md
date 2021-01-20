@@ -2,7 +2,7 @@
 title: Kontakt
 ---
 
-## Financing
+## Kontakt
 
 Lorem markdownum aptos pes, Inachidos caput corrumpere! Hanc haud quam [est
 candore](http://quisquis-in.io/ramossuperum) conpulit meriti. Vincere ferocia
