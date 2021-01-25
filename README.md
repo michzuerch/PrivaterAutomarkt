@@ -2,16 +2,15 @@
 
 Diese Seite wird mit gridsome erstellt. Folgender Starter wurde verwendet: https://github.com/jammeryhq/gridsome-starter-liebling.
 
-
 ## Key features
 
 * Built with Tailwind CSS
-* Responsive 
+* Responsive
 * Dark Mode
 * Mega Menu
 * Fulltext search
 * Author Pages
-* Custom Image Processor 
+* Custom Image Processor
 * Pagination
 * Syntax Highlighting via PrismJS
 
@@ -19,17 +18,15 @@ Diese Seite wird mit gridsome erstellt. Folgender Starter wurde verwendet: https
 
 Die Entwicklungsumbebung wir gestartet mit:
 
-```
+```bash
 gridsome develop
 ```
 
 Um die Produktiv-Version zu erstellen:
 
-```
+```bash
 gridsome build
 ```
-
-
 
 ## Credits
 

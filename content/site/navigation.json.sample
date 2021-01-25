@@ -45,18 +45,43 @@
       "link": "#",
       "children": [
         {
-          "name": "Händlerseite Mobile.de",
-          "link": "https://www.mobile.de",
+          "name": "Theme Repository",
+          "link": "https://www.github.com/jammeryhq/gridsome-starter-liebling",
           "external": true
-        }
+        },
+        {
+          "name": "Gridsome Docs",
+          "link": "https://www.gridsome.org/docs",
+          "external": true
+        },
+         {
+           "name": "Internal Page ( About )",
+           "link": "/about-us",
+           "external": false
+         }
       ]
     }
   ],
   "footerNavigation": [
     {
-      "name": "Neueste Beträge",
+      "name": "Latest Posts",
       "link": "/",
       "external" : false
+    },
+    {
+      "name": "Facebook",
+      "link": "https://www.facebook.com",
+      "external": true
+    },
+    {
+      "name": "Gridsome",
+      "link": "https://www.gridsome.org",
+      "external": true
+    },
+    {
+      "name": "RSS",
+      "link": "/rss.xml",
+      "external": false
     }
   ]
 }

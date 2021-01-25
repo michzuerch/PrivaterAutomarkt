@@ -4,7 +4,7 @@
       <h1 class="pt-8">
         404 - page not found
       </h1>
-      <p>Oops! That page returns an</p>
+      <p class="pb-5">Oops! That page returns an</p>
       <g-image
         src="~/assets/images/404.png"
         width="500"
