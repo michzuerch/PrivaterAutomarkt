@@ -1,10 +1,10 @@
 ---
-id: author1
-name: Troes retardat
-bio: Primis vitae mauris turpis ornare libero odio torquent vehicula proin consequat curabitur mattis
+id: manfred
+name: Manfred
+bio: Autohändler
 facebook: https://www.facebook.com
 twitter: https://www.twitter.com
 linkedin: https://www.linkedin.com
-image: ./images/author1.png
+image: ./images/manfred.png
 cover: ./cover/benjamin-voros-Lxq_TyMMHtQ-unsplash.jpg
 ---
