@@ -56,7 +56,7 @@ export default {
     },
     opacity: {
       type: Number,
-      default: 50
+      default: 20
     }
   },
   computed: {

@@ -1,35 +1,14 @@
 ---
 title: Finanzierung
-excerpt: Lorem markdownum aptos pes, Inachidos caput corrumpere! Vincere ferocia arva.
+excerpt: Wir bieten Ihnen neben preiswerten Fahrzeugen auch zinsgünstige Kredite an.
 ---
 
 ## Financing
 
-Zinsloser Kredit!
-Lorem markdownum aptos pes, Inachidos caput corrumpere! Hanc haud quam [est
-candore](http://quisquis-in.io/ramossuperum) conpulit meriti. Vincere ferocia
-arva.
+Finanzierung
+Ihnen gefällt unser Preis-/ Leistungsangebot, aber der Kaufpreis überschreitet Ihr Budget ? Daran soll Ihr Wunsch nach einem Fahrzeug nicht scheitern!
 
-## Eleis celeberrimus loci ait falsa infelix tuoque
 
-Mox haberet ambae torique dedisses quibus que membraque nervo remanet, digiti
-iam neve clamorque fallaces. Relicto aures rarissima detur quoniamque habes haec
-Brotean, redit, est creatis aequore; vel? Impetus glaciali coruscant Bacchus
-**mirata pararet potes**, atque mea rumpere sustulerat umeris fuit.
+Wir bieten Ihnen neben preiswerten Fahrzeugen auch zinsgünstige Kredite an. Es gibt auch keine langen Wartezeiten für die Kreditentscheidung.
 
----
-
-## title: Finanzierung
-
-## Financing
-
-Lorem markdownum aptos pes, Inachidos caput corrumpere! Hanc haud quam [est
-candore](http://quisquis-in.io/ramossuperum) conpulit meriti. Vincere ferocia
-arva.
-
-## Eleis celeberrimus loci ait falsa infelix tuoque
-
-Mox haberet ambae torique dedisses quibus que membraque nervo remanet, digiti
-iam neve clamorque fallaces. Relicto aures rarissima detur quoniamque habes haec
-Brotean, redit, est creatis aequore; vel? Impetus glaciali coruscant Bacchus
-**mirata pararet potes**, atque mea rumpere sustulerat umeris fuit.
+Nachdem die Kreditanfrage online abgeschickt wurde, liegt innerhalb weniger Minuten eine Entscheidung vor.

@@ -1,17 +1,18 @@
 ---
 title: Kontakt
-excerpt: Lorem markdownum aptos pes, Inachidos caput corrumpere! Vincere ferocia arva.
+excerpt: So können Sie uns kontaktieren.
 ---
 
 ## Kontakt
 
-Lorem markdownum aptos pes, Inachidos caput corrumpere! Hanc haud quam [est
-candore](http://quisquis-in.io/ramossuperum) conpulit meriti. Vincere ferocia
-arva.
+Manfred Schlett
 
-## Eleis celeberrimus loci ait falsa infelix tuoque
+Herrenlandstr. 39
 
-Mox haberet ambae torique dedisses quibus que membraque nervo remanet, digiti
-iam neve clamorque fallaces. Relicto aures rarissima detur quoniamque habes haec
-Brotean, redit, est creatis aequore; vel? Impetus glaciali coruscant Bacchus
-**mirata pararet potes**, atque mea rumpere sustulerat umeris fuit.
+78315 Radolfzell
+
+Tel. +49 - (0)7732-942407
+
+Fax. +49 - (0)7732-942408
+
+Email. info@billig-car.de

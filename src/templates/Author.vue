@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <content-header :image="$page.author.cover" :staticImage="false">
-      <div class="text-center text-white bg-gray-800 bg-opacity-50 lg:py-32 md:py-24 sm:py-16 py-8">
+      <div
+        class="text-center text-white bg-gray-800 bg-opacity-50 lg:py-32 md:py-24 sm:py-16 py-8"
+      >
         <div class="w-full">
           <g-image
             :src="$page.author.image"
@@ -11,38 +13,28 @@
           ></g-image>
         </div>
         <div class="w-full text-center pb-5">
-          <h2 class="sm:text-5xl text-3xl font-extrabold">{{ $page.author.name }}</h2>
+          <h2 class="sm:text-5xl text-3xl font-extrabold">
+            {{ $page.author.name }}
+          </h2>
           <p class="sm:text-xl font-sans">{{ $page.author.bio }}</p>
         </div>
         <div class="w-full text-center">
           {{ $page.author.belongsTo.totalCount }} {{ postLabel }}
           &nbsp;&bull;&nbsp;
           <a
-            :href="$page.author.facebook"
+            :href="$page.author.github"
             target="_blank"
             rel="noopener noreferrer"
             class="text-gray-400 hover:text-white"
           >
-            <font-awesome :icon="['fab', 'facebook']" />
+            <font-awesome :icon="['fab', 'github']" />
           </a>
           &nbsp;
-          <a
-            :href="$page.author.twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-400 hover:text-white"
-          >
-            <font-awesome :icon="['fab', 'twitter']" />
-          </a>
           &nbsp;
-          <a
-            :href="$page.author.linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-400 hover:text-white"
-          >
-            <font-awesome :icon="['fab', 'linkedin']" />
-          </a>
+          <span class="text-gray-400 hover:text-white">
+            <font-awesome :icon="['fab', 'wpforms']" />
+            <a href="mailto:test@email.com">{{ " " + $page.author.email }}</a>            
+          </span>
         </div>
       </div>
     </content-header>
@@ -73,13 +65,12 @@
   query($id: ID!, $page:Int) {
     author(id: $id) {
       name
+      email
       path
       bio
       image(width:150, height:150)
       cover
-      facebook
-      twitter
-      linkedin
+      github
       belongsTo(perPage: 6, page: $page) @paginate {
         totalCount
         pageInfo {
@@ -125,18 +116,18 @@ export default {
   components: {
     Pagination,
     CardItem,
-    ContentHeader
+    ContentHeader,
   },
   computed: {
-    postLabel: function() {
+    postLabel: function () {
       var pluralize = require("pluralize");
       return pluralize("post", this.$page.author.belongsTo.totalCount);
-    }
+    },
   },
   metaInfo() {
     return {
-      title: this.$page.author.name
+      title: this.$page.author.name,
     };
-  }
+  },
 };
 </script>

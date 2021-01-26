@@ -3,7 +3,7 @@
       <content-header 
         :title="$static.metadata.siteName" 
         :sub="$static.metadata.siteDescription"
-        image="phoenix-han-Nqdh0G8rdCc-unsplash.jpg">
+        image="hero.jpg">
       </content-header>
 
       <div class="container mx-auto">
@@ -95,7 +95,7 @@ import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   metaInfo: {
-    title: "Privater Automarkt"
+    title: "Privater Automarkt Radolfzell"
   },
   components: {
     CardItem,
