@@ -2,9 +2,9 @@ const c1 = () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ 
 const c2 = () => import(/* webpackChunkName: "page--src--templates--category-vue" */ "/home/user/Source/PrivaterAutomarkt/src/templates/Category.vue")
 const c3 = () => import(/* webpackChunkName: "page--src--templates--author-vue" */ "/home/user/Source/PrivaterAutomarkt/src/templates/Author.vue")
 const c4 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/home/user/Source/PrivaterAutomarkt/src/templates/BlogPost.vue")
-const c5 = () => import(/* webpackChunkName: "page--src--pages--location-vue" */ "/home/user/Source/PrivaterAutomarkt/src/pages/Location.vue")
-const c6 = () => import(/* webpackChunkName: "page--src--pages--infinity-vue" */ "/home/user/Source/PrivaterAutomarkt/src/pages/Infinity.vue")
-const c7 = () => import(/* webpackChunkName: "page--src--templates--custom-page-vue" */ "/home/user/Source/PrivaterAutomarkt/src/templates/CustomPage.vue")
+const c5 = () => import(/* webpackChunkName: "page--src--pages--infinity-vue" */ "/home/user/Source/PrivaterAutomarkt/src/pages/Infinity.vue")
+const c6 = () => import(/* webpackChunkName: "page--src--templates--custom-page-vue" */ "/home/user/Source/PrivaterAutomarkt/src/templates/CustomPage.vue")
+const c7 = () => import(/* webpackChunkName: "page--src--pages--location-vue" */ "/home/user/Source/PrivaterAutomarkt/src/pages/Location.vue")
 const c8 = () => import(/* webpackChunkName: "page--src--pages--404-vue" */ "/home/user/Source/PrivaterAutomarkt/src/pages/404.vue")
 const c9 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/home/user/Source/PrivaterAutomarkt/src/pages/Index.vue")
 
@@ -58,32 +58,32 @@ export default [
     component: c4
   },
   {
-    path: "/location/:page(\\d+)?/",
+    path: "/infinity/:page(\\d+)?/",
     component: c5
   },
   {
-    path: "/infinity/:page(\\d+)?/",
+    path: "/zulassung/",
     component: c6
   },
   {
-    path: "/zulassung/",
+    path: "/location/",
     component: c7
   },
   {
     path: "/kontakt/",
-    component: c7
+    component: c6
   },
   {
     path: "/impressum/",
-    component: c7
+    component: c6
   },
   {
     path: "/finanzierung/",
-    component: c7
+    component: c6
   },
   {
     path: "/dienstleistungen/",
-    component: c7
+    component: c6
   },
   {
     name: "404",

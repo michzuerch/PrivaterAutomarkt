@@ -31,3 +31,12 @@ gridsome build
 ## Credits
 
 This starter is based on [Ghost Liebling](https://github.com/eddiesigner/liebling).
+
+### API für Google Maps
+
+AIzaSyA7MNSWwZiKQrEchE7r2f49M18JJz7fouY
+
+
+### Koordinaten für Google Maps
+
+47.74356603033637, 8.954794269315288

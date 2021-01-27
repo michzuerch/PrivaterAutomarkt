@@ -1,79 +1,10 @@
 <template>
   <Layout>
-    <content-header
-      :title="$static.metadata.siteName"
-      :sub="$static.metadata.siteDescription"
-      image="hero.jpg"
-    >
-    </content-header>
-
-    <div class="container mx-auto">
-      <div class="flex flex-wrap my-4">
-        <p>Location</p>
-      </div>
+    <div class="container mx-auto min-h-32 p-6">
+      <google-map name="main" />
     </div>
   </Layout>
 </template>
-
-<page-query>
-  query($page: Int) {
-    featured: allBlog(limit: 4, filter: { featured: { eq: true } }, sortBy:"created") {
-      totalCount
-      edges {
-        node {
-          id
-          title
-          image(width: 800)
-          path
-          timeToRead
-          humanTime: created(format: "DD MMM YYYY")
-          datetime: created
-          category {
-            id
-            title
-            path
-          }
-          author {
-            id
-            name
-            image(width: 64, height: 64, fit: inside)
-            path
-          }
-        }
-      }
-    }
-    entries: allBlog(perPage: 24, page: $page, sortBy:"created") @paginate {
-      totalCount
-      pageInfo {
-        totalPages
-        currentPage
-      }
-      edges {
-        node {
-          id
-          title
-          image(width: 800)
-          path
-          timeToRead
-          featured
-          humanTime: created(format: "DD MMM YYYY")
-          datetime: created
-          category {
-            id
-            title
-            path
-          }
-          author {
-            id
-            name
-            image(width: 64, height: 64, fit: inside)
-            path
-          }
-        }
-      }
-    }
-  }
-</page-query>
 
 <static-query>
 query {
@@ -85,16 +16,16 @@ query {
 </static-query>
 
 <script>
-import CardItem from '~/components/Content/CardItem.vue'
-import FeaturedCard from '~/components/Content/FeaturedCard.vue'
-import ContentHeader from '~/components/Partials/ContentHeader.vue'
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import GoogleMap from '~/components/Partials/GoogleMap'
 
 export default {
   metaInfo: {
-    title: 'Privater Automarkt Radolfzell',
+    title: "Privater Automarkt Radolfzell",
   },
   components: {
     ContentHeader,
+    GoogleMap
   },
-}
+};
 </script>
