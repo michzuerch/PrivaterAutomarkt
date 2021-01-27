@@ -1,6 +1,9 @@
 <template>
   <Layout>
-    <content-header :title="$page.category.title" :sub="subTitle"></content-header>
+    <content-header
+      :title="$page.category.title"
+      :sub="subTitle"
+    ></content-header>
 
     <div class="container mx-auto">
       <div class="flex flex-wrap my-4">
@@ -66,29 +69,29 @@
 </page-query>
 
 <script>
-import CardItem from "~/components/Content/CardItem.vue";
-import Pagination from "~/components/Content/Pagination.vue";
-import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import CardItem from '~/components/Content/CardItem.vue'
+import Pagination from '~/components/Content/Pagination.vue'
+import ContentHeader from '~/components/Partials/ContentHeader.vue'
 
 export default {
   components: {
     Pagination,
     CardItem,
-    ContentHeader
+    ContentHeader,
   },
   computed: {
-    postLabel: function() {
-      var pluralize = require("pluralize");
-      return pluralize("post", this.$page.category.belongsTo.totalCount);
+    postLabel: function () {
+      var pluralize = require('pluralize')
+      return pluralize('post', this.$page.category.belongsTo.totalCount)
     },
-    subTitle: function() {
-      return `A collection of ${this.$page.category.belongsTo.totalCount} ${this.postLabel}`;
-    }
+    subTitle: function () {
+      return `A collection of ${this.$page.category.belongsTo.totalCount} ${this.postLabel}`
+    },
   },
   metaInfo() {
     return {
-      title: this.$page.category.title
-    };
-  }
-};
+      title: this.$page.category.title,
+    }
+  },
+}
 </script>

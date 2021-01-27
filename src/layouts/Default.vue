@@ -17,22 +17,22 @@ query {
 </static-query>
 
 <script>
-import Navbar from "~/components/Navbar/Navbar.vue";
-import VFooter from "~/components/Partials/Footer.vue";
+import Navbar from '~/components/Navbar/Navbar.vue'
+import VFooter from '~/components/Partials/Footer.vue'
 export default {
-  data: function() {
+  data: function () {
     return {
-      theme: "light"
-    };
+      theme: 'light',
+    }
   },
   components: {
     Navbar,
-    VFooter
+    VFooter,
   },
   methods: {
     setTheme(mode) {
-      this.theme = mode;
-    }
-  }
-};
+      this.theme = mode
+    },
+  },
+}
 </script>

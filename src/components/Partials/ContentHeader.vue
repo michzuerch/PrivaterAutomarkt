@@ -1,8 +1,15 @@
 <template>
-  <div >
-    <div class="z-100 text-center bg-gray-200 dark:bg-gray-900 py-10 md:py-20" v-if="!hasImage">
-      <h2 v-if="title!=null" class="h1 font-extrabold dark:text-gray-400">{{ title }}</h2>
-      <p v-if="sub!=null" class="text-gray-600 text-light font-sans">{{ sub }}</p>
+  <div>
+    <div
+      class="z-100 text-center bg-gray-200 dark:bg-gray-900 py-10 md:py-20"
+      v-if="!hasImage"
+    >
+      <h2 v-if="title != null" class="h1 font-extrabold dark:text-gray-400">
+        {{ title }}
+      </h2>
+      <p v-if="sub != null" class="text-gray-600 text-light font-sans">
+        {{ sub }}
+      </p>
     </div>
 
     <div v-if="hasImage" class="z-100 relative mt-0 h-auto">
@@ -25,10 +32,10 @@
       <slot>
         <div
           class="text-center text-white bg-gray-800 lg:py-48 md:py-32 py-24"
-          :class='`bg-opacity-${opacity}`'
+          :class="`bg-opacity-${opacity}`"
         >
-          <h2 v-if="title!=null" class="h1 font-extrabold">{{ title }}</h2>
-          <p v-if="sub!=null" class="h5 font-sans">{{ sub }}</p>
+          <h2 v-if="title != null" class="h1 font-extrabold">{{ title }}</h2>
+          <p v-if="sub != null" class="h5 font-sans">{{ sub }}</p>
         </div>
       </slot>
     </div>
@@ -40,32 +47,32 @@ export default {
   props: {
     title: {
       type: String,
-      default: null
+      default: null,
     },
     sub: {
       type: String,
-      default: null
+      default: null,
     },
     image: {
+      // eslint-disable-next-line vue/require-prop-type-constructor
       type: String | Object,
-      default: null
+      default: null,
     },
     staticImage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     opacity: {
       type: Number,
-      default: 20
-    }
+      default: 20,
+    },
   },
   computed: {
     hasImage() {
-      return this.image ? true : false;
-    }
-  }
-};
+      return this.image ? true : false
+    },
+  },
+}
 </script>
 
-<style>
-</style>
+<style></style>

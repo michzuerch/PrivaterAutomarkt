@@ -4,53 +4,36 @@
 import DefaultLayout from '~/layouts/Default.vue'
 
 //import VTooltip from 'v-tooltip'
-import {
-  VTooltip,
-  VPopover,
-  VClosePopover
-} from 'v-tooltip'
+import { VTooltip, VPopover, VClosePopover } from 'v-tooltip'
 
 import 'prismjs/themes/prism.css'
 import '~/assets/scss/main.scss'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
-import {
-  FontAwesomeIcon
-} from '@fortawesome/vue-fontawesome';
-import {
-  config,
-  library
-} from '@fortawesome/fontawesome-svg-core';
-import {
-  fas
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  fab
-} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { config, library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import ClickOutside from 'v-click-outside'
 import InfiniteLoading from 'vue-infinite-loading'
 
+config.autoAddCss = false
+library.add(fas)
+library.add(fab)
 
-config.autoAddCss = false;
-library.add(fas);
-library.add(fab);
-
-export default function (Vue, {
-  router,
-  head,
-  isClient
-}) {
-  
+export default function (Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'de' }
   head.meta.push({
-      name: 'keywords',
-      content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
+    name: 'keywords',
+    content:
+      'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung',
   })
   head.meta.push({
-      name: 'description',
-      content: 'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung'
+    name: 'description',
+    content:
+      'Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung',
   })
 
   // Set default layout as a global component
@@ -59,11 +42,12 @@ export default function (Vue, {
   Vue.component('font-awesome', FontAwesomeIcon)
 
   Vue.use(ClickOutside)
-  
-  if( isClient ) {
-    VTooltip.options.defaultPlacement = 'top-end';
-    VTooltip.options.defaultClass = 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3';
-    VTooltip.options.defaultBoundariesElement = document.body;
+
+  if (isClient) {
+    VTooltip.options.defaultPlacement = 'top-end'
+    VTooltip.options.defaultClass =
+      'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3'
+    VTooltip.options.defaultBoundariesElement = document.body
 
     Vue.directive('tooltip', VTooltip)
     Vue.directive('close-popover', VClosePopover)

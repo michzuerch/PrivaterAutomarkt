@@ -1,5 +1,5 @@
 {
-  "name": "privaterautomarkt",
+  "name": "privater-automarkt-radolfzell",
   "private": true,
   "version": "1.0.0",
   "description": "Website Privater Automarkt Radolfzell",
@@ -13,6 +13,14 @@
     "type": "git",
     "url": "https://github.com/michzuerch/PrivaterAutomarkt"
   },
+  "homepage": "https://github.com/michzuerch/PrivaterAutomarkt",
+  "keywords": [
+    "gridsome",
+    "vue",
+    "blog",
+    "markdown",
+    "netlify"
+  ],
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
@@ -25,11 +33,10 @@
     "@gridsome/transformer-remark": "^0.6.4",
     "autoprefixer": "^10.2.3",
     "gridsome": "^0.7.23",
-    "gridsome-plugin-rss": "^1.2.0",
     "gridsome-plugin-flexsearch": "^1.0.5",
     "gridsome-plugin-remark-prismjs-all": "^0.3.5",
     "gridsome-plugin-robots": "^0.2.1",
-    "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#825c1c5c",
+    "gridsome-source-static-meta": "^1.0.1",
     "hooper": "^0.3.4",
     "medium-zoom": "^1.0.6",
     "minimist": "^1.2.5",

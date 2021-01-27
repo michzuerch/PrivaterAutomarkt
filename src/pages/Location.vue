@@ -85,18 +85,16 @@ query {
 </static-query>
 
 <script>
-import CardItem from "~/components/Content/CardItem.vue";
-import FeaturedCard from "~/components/Content/FeaturedCard.vue";
-import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import CardItem from '~/components/Content/CardItem.vue'
+import FeaturedCard from '~/components/Content/FeaturedCard.vue'
+import ContentHeader from '~/components/Partials/ContentHeader.vue'
 
 export default {
   metaInfo: {
-    title: "Privater Automarkt Radolfzell",
+    title: 'Privater Automarkt Radolfzell',
   },
   components: {
-    CardItem,
-    FeaturedCard,
     ContentHeader,
   },
-};
+}
 </script>

@@ -8,7 +8,10 @@
               <span
                 class="flex items-center leading-normal rounded rounded-r-none border border-r-0 border-gray-500 px-3 whitespace-nowrap text-gray-400 dark:bg-gray-900 dark:text-gray-700 dark:border-gray-700"
               >
-                <font-awesome :icon="['fas', 'search']" size="lg"></font-awesome>
+                <font-awesome
+                  :icon="['fas', 'search']"
+                  size="lg"
+                ></font-awesome>
               </span>
             </div>
             <input
@@ -26,23 +29,29 @@
       <div class="search-results w-full">
         <div class="container px-5 py-12 md:py-12 mx-auto">
           <div class="flex flex-wrap -mx-4 -my-8">
-            <div 
-              class="py-2 px-4 sm:w-2/4 md:w-1/3" 
+            <div
+              class="py-2 px-4 sm:w-2/4 md:w-1/3"
               v-for="resultEntry in searchResults"
-              :key="resultEntry.id">
-              <g-link
-                :to="resultEntry.path"
-                
-              >
-                <div class="h-full flex items-start bg-gray-50 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 rounded-lg">
+              :key="resultEntry.id"
+            >
+              <g-link :to="resultEntry.path">
+                <div
+                  class="h-full flex items-start bg-gray-50 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 rounded-lg"
+                >
                   <div class="flex-grow px-6">
                     <h2
                       class="tracking-widest text-xs title-font font-medium text-blue-500 mb-1"
-                    >{{ resultEntry.node.category}}</h2>
+                    >
+                      {{ resultEntry.node.category }}
+                    </h2>
                     <h1
                       class="title-font text-xl font-medium text-gray-900 dark:text-gray-400 mb-3"
-                    >{{ resultEntry.title }}</h1>
-                    <p class="leading-relaxed mb-5 dark:text-gray-500">{{ resultEntry.node.excerpt }}</p>
+                    >
+                      {{ resultEntry.title }}
+                    </h1>
+                    <p class="leading-relaxed mb-5 dark:text-gray-500">
+                      {{ resultEntry.node.excerpt }}
+                    </p>
                   </div>
                 </div>
               </g-link>
@@ -57,17 +66,16 @@
 <script>
 export default {
   data: () => ({
-    searchTerm: ""
+    searchTerm: '',
   }),
   computed: {
     searchResults() {
-      const searchTerm = this.searchTerm;
-      if (searchTerm.length < 3) return [];
-      return this.$search.search({ query: searchTerm, limit: 5 });
-    }
-  }
-};
+      const searchTerm = this.searchTerm
+      if (searchTerm.length < 3) return []
+      return this.$search.search({ query: searchTerm, limit: 5 })
+    },
+  },
+}
 </script>
 
-<style>
-</style>
+<style></style>

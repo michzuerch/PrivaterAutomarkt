@@ -13,15 +13,17 @@
               class="block py-1"
               :to="navItem.link"
               :title="navItem.name"
-              v-if="navItem.external!=true && navItem.children.length <=0"
-            >{{ navItem.name}}</g-link>
+              v-if="navItem.external != true && navItem.children.length <= 0"
+              >{{ navItem.name }}</g-link
+            >
             <a
               class="block"
               :href="navItem.link"
               target="_blank"
               :title="navItem.name"
-              v-if="navItem.external==true && navItem.children.length <=0"
-            >{{ navItem.name}}</a>
+              v-if="navItem.external == true && navItem.children.length <= 0"
+              >{{ navItem.name }}</a
+            >
             <ClientOnly>
               <v-popover
                 placement="right"
@@ -29,7 +31,7 @@
                 offset="16"
                 v-if="navItem.children.length > 0"
               >
-                <a class="block py-1" style="cursor:pointer;">
+                <a class="block py-1" style="cursor: pointer">
                   {{ navItem.name }}
                   <font-awesome :icon="['fas', 'angle-right']"></font-awesome>
                 </a>
@@ -45,15 +47,17 @@
                         class="block"
                         :to="subItem.link"
                         :title="subItem.name"
-                        v-if="subItem.external!=true"
-                      >{{ subItem.name}}</g-link>
+                        v-if="subItem.external != true"
+                        >{{ subItem.name }}</g-link
+                      >
                       <a
                         class="block"
                         :href="subItem.link"
                         target="_blank"
                         :title="subItem.name"
-                        v-if="subItem.external==true"
-                      >{{ subItem.name}}</a>
+                        v-if="subItem.external == true"
+                        >{{ subItem.name }}</a
+                      >
                     </li>
                   </ul>
                 </template>
@@ -68,7 +72,6 @@
     </div>
   </div>
 </template>
-
 
 <static-query>
 query {
@@ -88,14 +91,13 @@ query {
 }
 </static-query>
 <script>
-import Subnavigation from "~/components/Navbar/NavbarSubNavigation.vue";
+import Subnavigation from '~/components/Navbar/NavbarSubNavigation.vue'
 
 export default {
   components: {
-    Subnavigation
-  }
-};
+    Subnavigation,
+  },
+}
 </script>
 
-<style>
-</style>
+<style></style>

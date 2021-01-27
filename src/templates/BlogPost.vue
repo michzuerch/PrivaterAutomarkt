@@ -104,7 +104,7 @@
                         <span class="text-gray-400 hover:text-white">
                           <font-awesome :icon="['fab', 'wpforms']" />
                           <a href="mailto:test@email.com">{{
-                            " " + $page.blog.author[0].email
+                            ' ' + $page.blog.author[0].email
                           }}</a>
                         </span>
                       </div>
@@ -234,10 +234,10 @@
 </page-query>
 
 <script>
-import CardItem from "~/components/Content/CardItem.vue";
-import ContentHeader from "~/components/Partials/ContentHeader.vue";
-import mediumZoom from "medium-zoom";
-import { sampleSize } from "lodash";
+import CardItem from '~/components/Content/CardItem.vue'
+import ContentHeader from '~/components/Partials/ContentHeader.vue'
+import mediumZoom from 'medium-zoom'
+import { sampleSize } from 'lodash'
 
 export default {
   components: {
@@ -247,26 +247,26 @@ export default {
   metaInfo() {
     return {
       title: this.$page.blog.title,
-    };
+    }
   },
   computed: {
     relatedRecords() {
-      return sampleSize(this.$page.related.edges, 2);
+      return sampleSize(this.$page.related.edges, 2)
     },
     authors() {
-      let authors = [];
+      let authors = []
       for (let index = 1; index < this.$page.blog.author.length; index++) {
         authors.push({
           name: this.$page.blog.author[index].name,
           path: this.$page.blog.author[index].path,
-        });
+        })
       }
 
-      return authors;
+      return authors
     },
   },
   mounted() {
-    mediumZoom(".post-content img");
+    mediumZoom('.post-content img')
   },
-};
+}
 </script>

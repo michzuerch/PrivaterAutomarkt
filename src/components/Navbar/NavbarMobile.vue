@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import ThemeSwitcher from "~/components/Navbar/ThemeSwitcher.vue";
-import SearchButton from "~/components/Navbar/SearchButton.vue";
+import ThemeSwitcher from '~/components/Navbar/ThemeSwitcher.vue'
+import SearchButton from '~/components/Navbar/SearchButton.vue'
 
 export default {
   props: {
@@ -53,10 +53,10 @@ export default {
   },
   methods: {
     openNavbarModal() {
-      this.$emit("openNavbarModal");
+      this.$emit('openNavbarModal')
     },
   },
-};
+}
 </script>
 
 <static-query>

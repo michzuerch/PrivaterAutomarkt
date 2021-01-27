@@ -5,8 +5,17 @@
         <h2 class="text-xl mt-0 mb-2">Recent articles</h2>
 
         <div class="w-full">
-          <VueSlickCarousel :arrows="true" :dots="false" class="-mx-4" v-bind="sliderSettings">
-            <div v-for="edge in $static.recent.edges" :key="edge.node.id" class="px-4">
+          <VueSlickCarousel
+            :arrows="true"
+            :dots="false"
+            class="-mx-4"
+            v-bind="sliderSettings"
+          >
+            <div
+              v-for="edge in $static.recent.edges"
+              :key="edge.node.id"
+              class="px-4"
+            >
               <g-link :to="edge.node.path">
                 <div :id="edge.node.id" class>
                   <g-image
@@ -18,12 +27,16 @@
                   <div class="post-card-content">
                     <h3
                       class="tracking-wider mt-3 mb-3 text-lg font-light max-w-xl"
-                    >{{ edge.node.title }}</h3>
+                    >
+                      {{ edge.node.title }}
+                    </h3>
                   </div>
 
                   <div class="post-card-footer">
                     <p class="text-xs">
-                      <time :datetime="edge.node.datetime">{{ edge.node.humanTime }}</time>
+                      <time :datetime="edge.node.datetime">{{
+                        edge.node.humanTime
+                      }}</time>
                       &nbsp;&bull;&nbsp;
                       {{ edge.node.timeToRead }} min read
                     </p>
@@ -32,13 +45,23 @@
               </g-link>
             </div>
             <template #prevArrow>
-              <div class="w-8 h-8 z-40 absolute top-0 mt-12 ml-8 p-1 pl-2 bg-white rounded-full text-black cursor-pointer">
-                <font-awesome :icon="['fas', 'arrow-left']" size="md"></font-awesome>
+              <div
+                class="w-8 h-8 z-40 absolute top-0 mt-12 ml-8 p-1 pl-2 bg-white rounded-full text-black cursor-pointer"
+              >
+                <font-awesome
+                  :icon="['fas', 'arrow-left']"
+                  size="md"
+                ></font-awesome>
               </div>
             </template>
             <template #nextArrow>
-              <div class="w-8 h-8 z-50 absolute right-0 top-0 mt-12 mr-16 md:mr-8 p-1 pl-2 bg-white rounded-full text-black cursor-pointer">
-                <font-awesome :icon="['fas', 'arrow-right']" size="md"></font-awesome>
+              <div
+                class="w-8 h-8 z-50 absolute right-0 top-0 mt-12 mr-16 md:mr-8 p-1 pl-2 bg-white rounded-full text-black cursor-pointer"
+              >
+                <font-awesome
+                  :icon="['fas', 'arrow-right']"
+                  size="md"
+                ></font-awesome>
               </div>
             </template>
           </VueSlickCarousel>
@@ -48,7 +71,11 @@
         <h2 class="text-xl mt-2 mb-2">Tags</h2>
 
         <ul class="flex flex-wrap">
-          <li class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-4 mb-4 border hover:border-blue-500 border-gray-600 text-gray-700 dark:text-gray-400 rounded-full" v-for="tag in $static.tags.edges" :key="tag.node.id">
+          <li
+            class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-4 mb-4 border hover:border-blue-500 border-gray-600 text-gray-700 dark:text-gray-400 rounded-full"
+            v-for="tag in $static.tags.edges"
+            :key="tag.node.id"
+          >
             <g-link :to="tag.node.path">{{ tag.node.title }}</g-link>
           </li>
         </ul>
@@ -58,11 +85,11 @@
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
+import VueSlickCarousel from 'vue-slick-carousel'
 
 export default {
   components: {
-    VueSlickCarousel
+    VueSlickCarousel,
   },
   data() {
     return {
@@ -81,8 +108,8 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 1,
               dots: false,
-              infinite: true
-            }
+              infinite: true,
+            },
           },
           {
             breakpoint: 600,
@@ -91,8 +118,8 @@ export default {
               slidesToScroll: 1,
               initialSlide: 2,
               dots: false,
-              infinite: true
-            }
+              infinite: true,
+            },
           },
           {
             breakpoint: 480,
@@ -100,18 +127,17 @@ export default {
               slidesToShow: 1,
               slidesToScroll: 1,
               dots: false,
-              infinite: true
-            }
-          }
-        ]
-      }
-    };
-  }
-};
+              infinite: true,
+            },
+          },
+        ],
+      },
+    }
+  },
+}
 </script>
 
-<style>
-</style>
+<style></style>
 
 <static-query>
 

@@ -124,19 +124,19 @@
 </template>
 
 <script>
-import ThemeSwitcher from "~/components/Navbar/ThemeSwitcher.vue";
-import SearchButton from "~/components/Navbar/SearchButton.vue";
-import Subnavigation from "~/components/Navbar/NavbarSubNavigation.vue";
+import ThemeSwitcher from '~/components/Navbar/ThemeSwitcher.vue'
+import SearchButton from '~/components/Navbar/SearchButton.vue'
+import Subnavigation from '~/components/Navbar/NavbarSubNavigation.vue'
 
 export default {
   data: function () {
     return {
       showSubNavigation: false,
       vcoConfig: {
-        events: ["dblclick", "click"],
+        events: ['dblclick', 'click'],
         isActive: true,
       },
-    };
+    }
   },
   components: {
     ThemeSwitcher,
@@ -153,28 +153,28 @@ export default {
   },
   methods: {
     toggleSubNavigation() {
-      this.showSubNavigation = !this.showSubNavigation;
+      this.showSubNavigation = !this.showSubNavigation
     },
     onClickOutside(event) {
       if (!event.defaultPrevented && this.showSubNavigation == true) {
-        this.toggleSubNavigation();
+        this.toggleSubNavigation()
       }
     },
     hideSubNavigation() {
-      this.showSubNavigation = false;
+      this.showSubNavigation = false
     },
   },
   watch: {
     hideSubnav() {
       if (this.hideSubnav) {
-        this.hideSubNavigation();
+        this.hideSubNavigation()
       }
     },
     $route(to, from) {
-      this.hideSubNavigation();
+      this.hideSubNavigation()
     },
   },
-};
+}
 </script>
 
 <static-query>

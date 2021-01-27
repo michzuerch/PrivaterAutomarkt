@@ -66,29 +66,29 @@
 </page-query>
 
 <script>
-import CardItem from "~/components/Content/CardItem.vue";
-import Pagination from "~/components/Content/Pagination.vue";
-import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import CardItem from '~/components/Content/CardItem.vue'
+import Pagination from '~/components/Content/Pagination.vue'
+import ContentHeader from '~/components/Partials/ContentHeader.vue'
 
 export default {
   components: {
     Pagination,
     CardItem,
-    ContentHeader
+    ContentHeader,
   },
   computed: {
-    postLabel: function() {
-      var pluralize = require("pluralize");
-      return pluralize("post", this.$page.tag.belongsTo.totalCount);
+    postLabel: function () {
+      var pluralize = require('pluralize')
+      return pluralize('post', this.$page.tag.belongsTo.totalCount)
     },
-    subTitle: function() {
-      return `A collection of ${this.$page.tag.belongsTo.totalCount} ${this.postLabel}`;
-    }
+    subTitle: function () {
+      return `A collection of ${this.$page.tag.belongsTo.totalCount} ${this.postLabel}`
+    },
   },
   metaInfo() {
     return {
-      title: this.$page.tag.title
-    };
-  }
-};
+      title: this.$page.tag.title,
+    }
+  },
+}
 </script>
