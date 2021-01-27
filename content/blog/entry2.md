@@ -1,16 +1,16 @@
 ---
 title: Dederis faciem
-tags: tag1, tag2, tag3
-category: Getting started
-excerpt: Qua opes egentes cur, et trunca carpserat tulitquemuneris foedumque patriumque pisces vices!
-created: 2019-02-05
-image: ./images/lukasz-szmigiel-jFCViYFYcus-unsplash.jpg
-image_caption: Photo by Luasz Szmigiel on Unsplash
+tags: Classic cars
+category: Classic cars
+excerpt: The clear design of a classic Porsche
+created: 2021-01-26
+image: ./images/PorscheClassic.jpg
+image_caption: Classic Porsche
 author: michzuerch
 featured: true
 ---
 
-## Loci ego fuit
+## Sportwage
 
 Lorem markdownum tollere. *Qua opes egentes* cur, et trunca carpserat
 tulitquemuneris foedumque patriumque pisces vices sed eadem quam! **Cupidinis

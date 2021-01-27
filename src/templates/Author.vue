@@ -29,11 +29,17 @@
           >
             <font-awesome :icon="['fab', 'github']" />
           </a>
-          &nbsp;
-          &nbsp;
+          &nbsp; &nbsp;
           <span class="text-gray-400 hover:text-white">
-            <font-awesome :icon="['fab', 'wpforms']" />
-            <a href="mailto:test@email.com">{{ " " + $page.author.email }}</a>            
+            <a
+              href="mailto:test@email.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white"
+            >
+              <font-awesome :icon="['fab', 'wpforms']" />
+              {{ " " + $page.author.email }}
+            </a>
           </span>
         </div>
       </div>

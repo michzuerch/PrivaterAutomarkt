@@ -1,16 +1,16 @@
 ---
 title: Featured
-tags: tag1, tag2
-category: Digital
-excerpt: Lorem markdownum aptos pes, Inachidos caput corrumpere! Vincere ferocia arva.
-created: 2019-01-10
-image: ./images/josh-spires-dronenr-sQalFlXIsLs-unsplash.jpg
-image_caption: Photo by Josh Spires on Unsplash
+tags: Verkauf, Autohandel
+category: Gebrauchtwagen
+excerpt: Neuer Porsche 911
+created: 2021-01-24
+image: ./images/Porsche911.jpg
+image_caption: Porsche 911
 author: michzuerch
 featured: true
 ---
 
-## Dieser Blogeintrag ist ein Test?
+## Dieser Blogeintrag ist ein Test!
 
 Lorem markdownum aptos pes, Inachidos caput corrumpere! Hanc haud quam [est
 candore](http://quisquis-in.io/ramossuperum) conpulit meriti. Vincere ferocia
