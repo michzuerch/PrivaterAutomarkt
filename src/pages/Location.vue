@@ -2,7 +2,7 @@
 <template>
     <Layout>
         <div class="container mx-auto">
-            <div id="map"></div>
+            <div id="map" ></div>
         </div>
     </Layout>
 </template>
