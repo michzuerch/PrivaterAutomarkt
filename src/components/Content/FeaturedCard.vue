@@ -96,7 +96,7 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
+import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
   props: {
@@ -107,23 +107,23 @@ export default {
   },
   methods: {
     authors(record) {
-      let tooltipText = []
+      let tooltipText = [];
       for (let index = 0; index < record.author.length; index++) {
         if (index == 0) {
-          tooltipText.push(`Posted by ${record.author[index].name}`)
+          tooltipText.push(`Posted by ${record.author[index].name}`);
         } else {
           if (index == 1) {
-            tooltipText.push(`<br> Among with ${record.author[index].name}`)
+            tooltipText.push(`<br> Among with ${record.author[index].name}`);
           } else {
-            tooltipText.push(`, ${record.author[index].name}`)
+            tooltipText.push(`, ${record.author[index].name}`);
           }
         }
       }
 
-      return tooltipText.join('')
+      return tooltipText.join("");
     },
   },
-}
+};
 </script>
 
 <style></style>

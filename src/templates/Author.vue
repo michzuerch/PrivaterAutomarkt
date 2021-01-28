@@ -38,7 +38,7 @@
               class="text-gray-400 hover:text-white"
             >
               <font-awesome :icon="['fab', 'wpforms']" />
-              {{ ' ' + $page.author.email }}
+              {{ " " + $page.author.email }}
             </a>
           </span>
         </div>
@@ -114,9 +114,9 @@
 </page-query>
 
 <script>
-import CardItem from '~/components/Content/CardItem.vue'
-import Pagination from '~/components/Content/Pagination.vue'
-import ContentHeader from '~/components/Partials/ContentHeader.vue'
+import CardItem from "~/components/Content/CardItem.vue";
+import Pagination from "~/components/Content/Pagination.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   components: {
@@ -126,14 +126,14 @@ export default {
   },
   computed: {
     postLabel: function () {
-      var pluralize = require('pluralize')
-      return pluralize('post', this.$page.author.belongsTo.totalCount)
+      var pluralize = require("pluralize");
+      return pluralize("post", this.$page.author.belongsTo.totalCount);
     },
   },
   metaInfo() {
     return {
       title: this.$page.author.name,
-    }
+    };
   },
-}
+};
 </script>

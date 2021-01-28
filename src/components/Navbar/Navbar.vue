@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import NavbarDesktop from '~/components/Navbar/NavbarDesktop.vue'
-import NavbarMobile from '~/components/Navbar/NavbarMobile.vue'
-import Modal from '~/components/Modal/Modal.vue'
-import SearchModal from '~/components/Modal/SearchModal.vue'
-import NavbarModal from '~/components/Modal/NavbarMobileModal.vue'
-import { headroom } from 'vue-headroom'
+import NavbarDesktop from "~/components/Navbar/NavbarDesktop.vue";
+import NavbarMobile from "~/components/Navbar/NavbarMobile.vue";
+import Modal from "~/components/Modal/Modal.vue";
+import SearchModal from "~/components/Modal/SearchModal.vue";
+import NavbarModal from "~/components/Modal/NavbarMobileModal.vue";
+import { headroom } from "vue-headroom";
 
 export default {
   props: {
@@ -56,7 +56,7 @@ export default {
       showNavbarModal: false,
       headerHeight: 100,
       navbarUnpinned: false,
-    }
+    };
   },
   components: {
     NavbarDesktop,
@@ -68,25 +68,25 @@ export default {
   },
   methods: {
     openSearchModal() {
-      this.showSearchModal = true
+      this.showSearchModal = true;
     },
     closeSearchModal() {
-      this.showSearchModal = false
+      this.showSearchModal = false;
     },
     openNavbarModal() {
-      this.showNavbarModal = true
+      this.showNavbarModal = true;
     },
     closeNavbarModal() {
-      this.showNavbarModal = false
+      this.showNavbarModal = false;
     },
   },
   watch: {
     $route(to, from) {
-      this.closeNavbarModal()
-      this.closeSearchModal()
+      this.closeNavbarModal();
+      this.closeSearchModal();
     },
   },
-}
+};
 </script>
 
 <static-query>

@@ -91,13 +91,13 @@ query {
 }
 </static-query>
 <script>
-import Subnavigation from '~/components/Navbar/NavbarSubNavigation.vue'
+import Subnavigation from "~/components/Navbar/NavbarSubNavigation.vue";
 
 export default {
   components: {
     Subnavigation,
   },
-}
+};
 </script>
 
 <style></style>

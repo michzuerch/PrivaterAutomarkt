@@ -64,10 +64,10 @@
 export default {
   methods: {
     icon(icon) {
-      return ['fab', icon]
+      return ["fab", icon];
     },
   },
-}
+};
 </script>
 
 <static-query>

@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
+import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
   components: {
@@ -132,9 +132,9 @@ export default {
           },
         ],
       },
-    }
+    };
   },
-}
+};
 </script>
 
 <style></style>

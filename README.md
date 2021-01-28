@@ -4,15 +4,15 @@ Diese Seite wird mit gridsome erstellt. Folgender Starter wurde verwendet: https
 
 ## Key features
 
-* Built with Tailwind CSS
-* Responsive
-* Dark Mode
-* Mega Menu
-* Fulltext search
-* Author Pages
-* Custom Image Processor
-* Pagination
-* Syntax Highlighting via PrismJS
+- Built with Tailwind CSS
+- Responsive
+- Dark Mode
+- Mega Menu
+- Fulltext search
+- Author Pages
+- Custom Image Processor
+- Pagination
+- Syntax Highlighting via PrismJS
 
 ## Installation
 
@@ -35,7 +35,6 @@ This starter is based on [Ghost Liebling](https://github.com/eddiesigner/lieblin
 ### API für Google Maps
 
 AIzaSyA7MNSWwZiKQrEchE7r2f49M18JJz7fouY
-
 
 ### Koordinaten für Google Maps
 

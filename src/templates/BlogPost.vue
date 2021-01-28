@@ -104,7 +104,7 @@
                         <span class="text-gray-400 hover:text-white">
                           <font-awesome :icon="['fab', 'wpforms']" />
                           <a href="mailto:test@email.com">{{
-                            ' ' + $page.blog.author[0].email
+                            " " + $page.blog.author[0].email
                           }}</a>
                         </span>
                       </div>
@@ -136,108 +136,105 @@
 </template>
 
 <page-query>
-  query($recordId: ID!, $tags: [ID]) {
-    blog(id: $recordId) {
+query($recordId: ID!, $tags: [ID]) {
+  blog(id: $recordId) {
+    title
+    path
+    image(width: 1600, height: 800)
+    image_caption
+    excerpt
+    content
+    humanTime: created(format: "DD MMMM YYYY")
+    datetime: created(format: "ddd MMM DD YYYY hh:mm:ss zZ")
+
+    timeToRead
+    tags {
+      id
       title
       path
-      image(width:1600, height:800)
-      image_caption
-      excerpt
-      content
-      humanTime : created(format:"DD MMMM YYYY")
-      datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-      
-      timeToRead
-      tags {
-        id
-        title
-        path
-      }
-      category {
-        id
-        title
-        path
-        belongsTo(limit:4) {
-          totalCount
-          edges {
-            node {
-              ... on Blog {
-                title
-                path
-              }
-            }
-          }
-        }
-      }
-      author {
-        id
-        name
-        image
-        path
-        bio
-        github
-        email
-      }
     }
-
-    related: allBlog(
-      filter: { id: { ne: $recordId }, tags: {containsAny: $tags} }
-    ) {
-      edges {
-        node {
-          title
+    category {
+      id
+      title
       path
-      image(width:1600, height:800)
-      image_caption
-      excerpt
-      content
-      humanTime : created(format:"DD MMMM YYYY")
-      datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-      
-      timeToRead
-      tags {
-        id
-        title
-        path
-      }
-      category {
-        id
-        title
-        path
-        belongsTo(limit:4) {
-          totalCount
-          edges {
-            node {
-              ... on Blog {
-                title
-                path
-              }
+      belongsTo(limit: 4) {
+        totalCount
+        edges {
+          node {
+            ... on Blog {
+              title
+              path
             }
           }
         }
       }
-      author {
-        id
-        name
-        image
+    }
+    author {
+      id
+      name
+      image
+      path
+      bio
+      github
+      email
+    }
+  }
+
+  related: allBlog(
+    filter: { id: { ne: $recordId }, tags: { containsAny: $tags } }
+  ) {
+    edges {
+      node {
+        title
         path
-        github
-        email
-      }
+        image(width: 1600, height: 800)
+        image_caption
+        excerpt
+        content
+        humanTime: created(format: "DD MMMM YYYY")
+        datetime: created(format: "ddd MMM DD YYYY hh:mm:ss zZ")
+
+        timeToRead
+        tags {
+          id
+          title
+          path
+        }
+        category {
+          id
+          title
+          path
+          belongsTo(limit: 4) {
+            totalCount
+            edges {
+              node {
+                ... on Blog {
+                  title
+                  path
+                }
+              }
+            }
+          }
+        }
+        author {
+          id
+          name
+          image
+          path
+          github
+          email
         }
       }
     }
-
-
-    
   }
+}
 </page-query>
 
 <script>
-import CardItem from '~/components/Content/CardItem.vue'
-import ContentHeader from '~/components/Partials/ContentHeader.vue'
-import mediumZoom from 'medium-zoom'
-import { sampleSize } from 'lodash'
+import mediumZoom from "medium-zoom";
+import { sampleSize } from "lodash";
+import CardItem from "~/components/Content/CardItem.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   components: {
@@ -247,26 +244,26 @@ export default {
   metaInfo() {
     return {
       title: this.$page.blog.title,
-    }
+    };
   },
   computed: {
     relatedRecords() {
-      return sampleSize(this.$page.related.edges, 2)
+      return sampleSize(this.$page.related.edges, 2);
     },
     authors() {
-      let authors = []
+      const authors = [];
       for (let index = 1; index < this.$page.blog.author.length; index++) {
         authors.push({
           name: this.$page.blog.author[index].name,
           path: this.$page.blog.author[index].path,
-        })
+        });
       }
 
-      return authors
+      return authors;
     },
   },
   mounted() {
-    mediumZoom('.post-content img')
+    mediumZoom(".post-content img");
   },
-}
+};
 </script>

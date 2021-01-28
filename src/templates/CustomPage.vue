@@ -30,8 +30,8 @@
 </page-query>
 
 <script>
-import ContentHeader from '~/components/Partials/ContentHeader.vue'
-import mediumZoom from 'medium-zoom'
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import mediumZoom from "medium-zoom";
 
 export default {
   components: {
@@ -40,10 +40,10 @@ export default {
   metaInfo() {
     return {
       title: this.$page.page.title,
-    }
+    };
   },
   mounted() {
-    mediumZoom('.post-content img')
+    mediumZoom(".post-content img");
   },
-}
+};
 </script>

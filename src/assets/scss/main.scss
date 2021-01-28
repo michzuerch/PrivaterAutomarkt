@@ -10,42 +10,46 @@ blockquote {
   }
 }
 
-h1, .h1 {
+h1,
+.h1 {
   @apply font-sans my-4 font-medium;
   @include font-size(3rem);
-
 }
 
-h2, .h2 {
+h2,
+.h2 {
   @apply font-sans my-4 font-medium;
   @include font-size(2.25rem);
 }
 
-h3, .h3 {
+h3,
+.h3 {
   @apply font-sans my-4 font-medium;
   @include font-size(1.875rem);
 }
 
-h4, .h4 {
+h4,
+.h4 {
   @apply font-sans my-4 font-medium;
   @include font-size(1.5rem);
 }
 
-h5, .h5 {
+h5,
+.h5 {
   @apply font-sans my-4 font-medium;
   @include font-size(1.25rem);
 }
 
-h6, .h6 {
+h6,
+.h6 {
   @apply font-sans my-4 font-medium;
   @include font-size(1.125rem);
 }
 
-
 @tailwind components;
 @tailwind utilities;
 
-@import 'node_modules/vue-slick-carousel/dist/vue-slick-carousel';
+@import "node_modules/vue-slick-carousel/dist/vue-slick-carousel";
 
 .container {
   @apply max-w-screen-xl px-0;
@@ -62,7 +66,6 @@ h6, .h6 {
 }
 
 .featured-post-card {
-
   .slick-list {
     @apply h-full rounded-lg;
 
@@ -75,7 +78,7 @@ h6, .h6 {
     @apply absolute bottom-0 right-0 text-white;
   }
 
-  transition: all .25s cubic-bezier(.02, .01, .47, 1);
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
 
   &:hover {
     transform: translateY(-5px);
@@ -95,13 +98,11 @@ h6, .h6 {
 
   .post-card-footer {
     @apply absolute bottom-0 left-0 text-white ml-10 mb-10 text-sm font-semibold;
-
   }
-
 }
 
 .post-card {
-  transition: all .25s cubic-bezier(.02, .01, .47, 1);
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
 
   &:hover {
     transform: translateY(-5px);
@@ -158,7 +159,6 @@ h6, .h6 {
     Influenced by: https://sproutsocial.com/
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-
 /* #Mega Menu Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -173,20 +173,17 @@ h6, .h6 {
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .tooltip {
-
-  &[aria-hidden='true'] {
+  &[aria-hidden="true"] {
     visibility: hidden;
     opacity: 0;
-    transition: opacity .15s, visibility .15s;
+    transition: opacity 0.15s, visibility 0.15s;
   }
 
-  &[aria-hidden='false'] {
+  &[aria-hidden="false"] {
     visibility: visible;
     opacity: 1;
-    transition: opacity .15s;
+    transition: opacity 0.15s;
   }
-
-
 
   &.card-author-tooltip {
     @apply z-1000 bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3;
@@ -219,7 +216,6 @@ h6, .h6 {
   }
 
   &.navbar-popover {
-
     @apply bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 -mt-3 z-1000;
 
     &::after {
@@ -232,11 +228,9 @@ h6, .h6 {
       border-bottom-color: #000;
       margin-left: -8px;
     }
-
   }
 
   &.mobile-navbar-popover {
-
     @apply bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 -mt-3 z-1000;
 
     &::after {
@@ -249,9 +243,7 @@ h6, .h6 {
       border-right-color: #000;
       margin-left: -8px;
     }
-
   }
-
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -270,7 +262,6 @@ h6, .h6 {
 }
 
 .post-content {
-
   p,
   span:not(.token),
   li {
@@ -289,7 +280,6 @@ h6, .h6 {
   li > ul {
     @apply mt-0;
   }
-
 }
 
 .post-authors a::after {
@@ -317,7 +307,7 @@ code[class*="language-"] {
   color: #5c6e74;
 
   text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   @include font-size(0.9rem);
   direction: ltr;
   text-align: left;
@@ -344,14 +334,14 @@ code[class*="language-"]::mozselection {
 
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
   @apply bg-gray-200;
 }
 
-:not(pre)>code[class*="language-"] {
-  padding: .3em .3em;
-  border-radius: .3em;
+:not(pre) > code[class*="language-"] {
+  padding: 0.3em 0.3em;
+  border-radius: 0.3em;
   color: #db4c69;
   @apply bg-gray-200;
 }
@@ -361,7 +351,7 @@ pre[class*="language-"] {
   code[class*="language-"]::selection,
   pre[class*="language-"]::mozselection,
   code[class*="language-"]::mozselection {
-    text-shadow: none; 
+    text-shadow: none;
     @apply bg-gray-800;
   }
 
@@ -372,33 +362,31 @@ pre[class*="language-"] {
 
   pre[class*="language-"] {
     padding: 1em;
-    margin: .5em 0;
+    margin: 0.5em 0;
     overflow: auto;
     @apply bg-gray-800;
   }
 
-  :not(pre)>code[class*="language-"] {
-    padding: .3em .3em;
-    border-radius: .3em;
-    color: #db4c69; 
+  :not(pre) > code[class*="language-"] {
+    padding: 0.3em 0.3em;
+    border-radius: 0.3em;
+    color: #db4c69;
     @apply bg-gray-800;
   }
 }
 
 @media print {
-
   pre[class*="language-"],
   code[class*="language-"] {
     text-shadow: none;
   }
 }
 
-
 /*********************************************************
 * Tokens
 */
 .namespace {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .token.comment,
@@ -476,7 +464,7 @@ pre[data-line] {
   position: relative;
 }
 
-pre[class*="language-"]>code[class*="language-"] {
+pre[class*="language-"] > code[class*="language-"] {
   position: relative;
   z-index: 1;
 }

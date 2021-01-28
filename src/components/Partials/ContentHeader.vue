@@ -54,6 +54,7 @@ export default {
       default: null,
     },
     image: {
+      // eslint-disable-next-line no-bitwise
       // eslint-disable-next-line vue/require-prop-type-constructor
       type: String | Object,
       default: null,
@@ -69,10 +70,10 @@ export default {
   },
   computed: {
     hasImage() {
-      return this.image ? true : false
+      return !!this.image;
     },
   },
-}
+};
 </script>
 
 <style></style>

@@ -1,9 +1,9 @@
 {
-    "social" : [
-        {
-            "name": "Github",
-            "link": "https://github.com/michzuerch",
-            "icon": "github"
-        }
-    ]
+  "social": [
+    {
+      "name": "Github",
+      "link": "https://github.com/michzuerch",
+      "icon": "github"
+    }
+  ]
 }

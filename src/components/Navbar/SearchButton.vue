@@ -13,10 +13,10 @@
 export default {
   methods: {
     openSearchModal() {
-      this.$emit('openSearchModal')
+      this.$emit("openSearchModal");
     },
   },
-}
+};
 </script>
 
 <style></style>

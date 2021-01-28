@@ -66,16 +66,16 @@
 <script>
 export default {
   data: () => ({
-    searchTerm: '',
+    searchTerm: "",
   }),
   computed: {
     searchResults() {
-      const searchTerm = this.searchTerm
-      if (searchTerm.length < 3) return []
-      return this.$search.search({ query: searchTerm, limit: 5 })
+      const searchTerm = this.searchTerm;
+      if (searchTerm.length < 3) return [];
+      return this.$search.search({ query: searchTerm, limit: 5 });
     },
   },
-}
+};
 </script>
 
 <style></style>
