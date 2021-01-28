@@ -39,3 +39,7 @@ AIzaSyA7MNSWwZiKQrEchE7r2f49M18JJz7fouY
 ### Koordinaten für Google Maps
 
 47.74356603033637, 8.954794269315288
+
+### Additional Docs
+
+ Docs for Google Maps: [Google Documentation](https://developers.google.com/maps/documentation/javascript/overview#javascript)
