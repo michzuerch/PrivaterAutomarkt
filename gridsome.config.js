@@ -115,14 +115,6 @@ module.exports = {
             }
         },
         {
-            use: "gridsome-source-gmaps-geocode",
-            options: {
-                apiKey: process.env.GRIDSOME_GOOGLE_MAPS_API_KEY,
-                sourceTypeName: "Office",
-                sourceTypeField: "address"
-            }
-        },
-        {
             use: "gridsome-plugin-flexsearch",
             options: {
                 searchFields: ["title", "content"],

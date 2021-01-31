@@ -46,21 +46,6 @@ query {
 }
 </static-query>
 
-<page-query>
-query {
-    allOffice {
-        edges {
-            node {
-                geocode {
-                    lat
-                    lng
-                }
-            }
-        }
-    }
-}
-</page-query>
-
 <script>
 export default {
     mounted() {
