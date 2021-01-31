@@ -1,7 +1,7 @@
-//tailwind border color plugin powered by
-//https://github.com/tailwindcss/tailwindcss/pull/560#issuecomment-503222143
-var _ = require("lodash");
-var flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette")
+// tailwind border color plugin powered by
+// https://github.com/tailwindcss/tailwindcss/pull/560#issuecomment-503222143
+const _ = require("lodash");
+const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette")
   .default;
 
 module.exports = {
@@ -15,15 +15,15 @@ module.exports = {
         "bg-opacity-50",
         "bg-opacity-75",
         "bg-opacity-100",
-        "mode-dark",
-      ],
-    },
+        "mode-dark"
+      ]
+    }
   },
   theme: {
     extend: {
       height: {
         128: "32rem",
-        "half-screen": "50vh",
+        "half-screen": "50vh"
       },
       backgroundOpacity: {
         0: "0",
@@ -36,8 +36,8 @@ module.exports = {
         70: "0.7",
         80: "0.8",
         90: "0.9",
-        100: "1",
-      },
+        100: "1"
+      }
     },
     fontFamily: {
       sans: [
@@ -51,7 +51,7 @@ module.exports = {
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
+        '"Noto Color Emoji"'
       ],
       serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
       mono: [
@@ -60,8 +60,8 @@ module.exports = {
         "Consolas",
         '"Liberation Mono"',
         '"Courier New"',
-        "monospace",
-      ],
+        "monospace"
+      ]
     },
     zIndex: {
       "-10": "-10",
@@ -76,7 +76,7 @@ module.exports = {
       75: 75,
       100: 100,
       1000: 1000,
-      auto: "auto",
+      auto: "auto"
     },
     boxShadow: {
       default: "0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)",
@@ -91,13 +91,13 @@ module.exports = {
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
       outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
       focus: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-      none: "none",
-    },
+      none: "none"
+    }
   },
   variants: {
     backgroundColor: ["responsive", "hover", "focus", "dark"],
     textColor: ["responsive", "hover", "focus", "dark"],
-    borderColor: ["responsive", "hover", "focus", "dark"],
+    borderColor: ["responsive", "hover", "focus", "dark"]
   },
   plugins: [
     function ({ addUtilities, e, theme, variants }) {
@@ -107,24 +107,24 @@ module.exports = {
         _.omit(colors, "default"),
         (value, modifier) => ({
           [`.${e(`border-t-${modifier}`)}`]: {
-            borderTopColor: `${value}`,
+            borderTopColor: `${value}`
           },
           [`.${e(`border-r-${modifier}`)}`]: {
-            borderRightColor: `${value}`,
+            borderRightColor: `${value}`
           },
           [`.${e(`border-b-${modifier}`)}`]: {
-            borderBottomColor: `${value}`,
+            borderBottomColor: `${value}`
           },
           [`.${e(`border-l-${modifier}`)}`]: {
-            borderLeftColor: `${value}`,
-          },
+            borderLeftColor: `${value}`
+          }
         })
       );
 
       addUtilities(utilities, variants("borderColor"));
-    },
+    }
   ],
   corePlugins: {
-    container: false,
-  },
+    container: false
+  }
 };

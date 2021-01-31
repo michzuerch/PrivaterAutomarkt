@@ -14,8 +14,8 @@ export default {
   methods: {
     openSearchModal() {
       this.$emit("openSearchModal");
-    },
-  },
+    }
+  }
 };
 </script>
 

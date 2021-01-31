@@ -239,11 +239,11 @@ import ContentHeader from "~/components/Partials/ContentHeader.vue";
 export default {
   components: {
     CardItem,
-    ContentHeader,
+    ContentHeader
   },
   metaInfo() {
     return {
-      title: this.$page.blog.title,
+      title: this.$page.blog.title
     };
   },
   computed: {
@@ -255,15 +255,15 @@ export default {
       for (let index = 1; index < this.$page.blog.author.length; index++) {
         authors.push({
           name: this.$page.blog.author[index].name,
-          path: this.$page.blog.author[index].path,
+          path: this.$page.blog.author[index].path
         });
       }
 
       return authors;
-    },
+    }
   },
   mounted() {
     mediumZoom(".post-content img");
-  },
+  }
 };
 </script>

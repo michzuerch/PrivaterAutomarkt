@@ -75,7 +75,7 @@
 
 <static-query>
 query {
-   metadata {
+  metadata {
     siteName
     headerNavigation {
       name
@@ -95,8 +95,8 @@ import Subnavigation from "~/components/Navbar/NavbarSubNavigation.vue";
 
 export default {
   components: {
-    Subnavigation,
-  },
+    Subnavigation
+  }
 };
 </script>
 

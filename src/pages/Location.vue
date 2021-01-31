@@ -1,8 +1,28 @@
-/* eslint-disable import/no-unresolved */
 <template>
     <Layout>
-        <div class="container mx-auto">
-            <div id="map" ></div>
+        <div class="container">
+            <GmapMap
+                ref="mapRef"
+                style="width: 600px; height: 300px"
+                :zoom="14"
+                :center="{ lat: 47.7438, lng: 8.95501 }"
+                :options="{
+                    zoomControl: true,
+                    mapTypeControl: true,
+                    scaleControl: true,
+                    streetViewControl: true,
+                    rotateControl: false,
+                    fullscreenControl: true,
+                    disableDefaultUI: false
+                }"
+            >
+                <GmapMarker
+                    :draggable="false"
+                    :clickable="true"
+                    :position="{ lat: 47.7438, lng: 8.95501 }"
+                >
+                </GmapMarker>
+            </GmapMap>
         </div>
     </Layout>
 </template>
@@ -42,27 +62,13 @@ query {
 </page-query>
 
 <script>
-import { Loader } from "@googlemaps/js-api-loader"
-import ContentHeader from "~/components/Partials/ContentHeader.vue"
-
-const loader = new Loader({
-    apiKey: "AIzaSyA7MNSWwZiKQrEchE7r2f49M18JJz7fouY",
-    version: "weekly",
-    // ...additionalOptions,
-})
-loader.load().then(() => {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-    })
-})
-
 export default {
+    mounted() {
+        this.$refs.mapRef.$mapPromise.then((map) => {});
+    },
     metaInfo: {
-        title: "Privater Automarkt Radolfzell",
+        title: "Privater Automarkt Radolfzell"
     },
-    components: {
-        ContentHeader,
-    },
-}
+    components: {}
+};
 </script>

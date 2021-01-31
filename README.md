@@ -1,6 +1,6 @@
 # Webseite Privater Automarkt Radolfzell
 
-Diese Seite wird mit gridsome erstellt. Folgender Starter wurde verwendet: https://github.com/jammeryhq/gridsome-starter-liebling.
+Diese Seite wird mit gridsome erstellt. Folgender Starter wurde verwendet: [Gridsome Starter Liebling](https://github.com/jammeryhq/gridsome-starter-liebling).
 
 ## Key features
 

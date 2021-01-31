@@ -103,48 +103,48 @@ query {
 </static-query>
 
 <script>
-import CardItem from "~/components/Content/CardItem.vue"
-import FeaturedCard from "~/components/Content/FeaturedCard.vue"
-import ContentHeader from "~/components/Partials/ContentHeader.vue"
+import CardItem from "~/components/Content/CardItem.vue";
+import FeaturedCard from "~/components/Content/FeaturedCard.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
     metaInfo: {
-        title: "Hello, world!",
+        title: "Hello, world!"
     },
     components: {
         CardItem,
         FeaturedCard,
-        ContentHeader,
+        ContentHeader
     },
 
     data() {
         return {
             loadedPosts: [],
-            currentPage: 1,
-        }
+            currentPage: 1
+        };
     },
     created() {
-        this.loadedPosts.push(...this.$page.entries.edges)
+        this.loadedPosts.push(...this.$page.entries.edges);
     },
     methods: {
         async infiniteHandler($state) {
             if (this.currentPage + 1 > this.$page.entries.pageInfo.totalPages) {
-                $state.complete()
+                $state.complete();
             } else {
                 const { data } = await this.$fetch(
                     `/infinity/${this.currentPage + 1}`
-                )
+                );
                 if (data.entries.edges.length) {
-                    this.currentPage = data.entries.pageInfo.currentPage
-                    this.loadedPosts.push(...data.entries.edges)
-                    $state.loaded()
+                    this.currentPage = data.entries.pageInfo.currentPage;
+                    this.loadedPosts.push(...data.entries.edges);
+                    $state.loaded();
                 } else {
-                    $state.complete()
+                    $state.complete();
                 }
             }
-        },
-    },
-}
+        }
+    }
+};
 </script>
 
 <style scoped>

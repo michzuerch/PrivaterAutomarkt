@@ -89,7 +89,7 @@ import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   data() {
     return {
@@ -104,12 +104,12 @@ export default {
           {
             breakpoint: 1024,
             settings: {
-              //arrows: false,
+              // arrows: false,
               slidesToShow: 3,
               slidesToScroll: 1,
               dots: false,
-              infinite: true,
-            },
+              infinite: true
+            }
           },
           {
             breakpoint: 600,
@@ -118,8 +118,8 @@ export default {
               slidesToScroll: 1,
               initialSlide: 2,
               dots: false,
-              infinite: true,
-            },
+              infinite: true
+            }
           },
           {
             breakpoint: 480,
@@ -127,20 +127,19 @@ export default {
               slidesToShow: 1,
               slidesToScroll: 1,
               dots: false,
-              infinite: true,
-            },
-          },
-        ],
-      },
+              infinite: true
+            }
+          }
+        ]
+      }
     };
-  },
+  }
 };
 </script>
 
 <style></style>
 
 <static-query>
-
 query {
   tags: allTag {
     edges {
@@ -149,14 +148,14 @@ query {
         path
       }
     }
-  },
-  recent : allBlog(limit: 4, sort: { by: "created", order: DESC }) {
+  }
+  recent: allBlog(limit: 4, sort: { by: "created", order: DESC }) {
     edges {
       node {
         id
         title
         path
-        image(width:230, height:130)
+        image(width: 230, height: 130)
         humanTime: created(format: "DD MMM YYYY")
         datetime: created
         timeToRead
@@ -164,6 +163,4 @@ query {
     }
   }
 }
-
-
 </static-query>

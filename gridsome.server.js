@@ -21,7 +21,7 @@ module.exports = function (api) {
           ? options.author.split(",").map((string) => string.trim())
           : options.author;
       return {
-        ...options,
+        ...options
       };
     }
     if (options.internal.typeName === "CustomPage") {
@@ -48,10 +48,10 @@ module.exports = function (api) {
     `);
 
     data.allBlog.edges.forEach(({ node }) => {
-      //without the map, you will get an 500 error
-      //because the graphql filter requires an array
-      //not an object
-      var tags = _.map(node.tags, function (tag) {
+      // without the map, you will get an 500 error
+      // because the graphql filter requires an array
+      // not an object
+      const tags = _.map(node.tags, function (tag) {
         return tag.title;
       });
 
@@ -60,8 +60,8 @@ module.exports = function (api) {
         component: "./src/templates/BlogPost.vue",
         context: {
           recordId: node.id,
-          tags: tags,
-        },
+          tags
+        }
       });
     });
   });

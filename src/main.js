@@ -12,6 +12,8 @@ import ClickOutside from "v-click-outside";
 // import VTooltip from 'v-tooltip'
 import { VTooltip, VPopover, VClosePopover } from "v-tooltip";
 
+import * as VueGoogleMaps from "vue2-google-maps";
+
 import "prismjs/themes/prism.css";
 import "~/assets/scss/main.scss";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
@@ -33,18 +35,18 @@ export default function (Vue, { router, head, isClient }) {
     head.meta.push({
         name: "keywords",
         content:
-            "Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung",
+            "Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung"
     });
     head.meta.push({
         name: "description",
         content:
-            "Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung",
+            "Autohandel Gebrauchtwagen Billig Oldtimer Classic-Car Radolfzell Vermittlung Beschaffung"
     });
     head.link.push({
         rel: "sitemap",
         type: "application/xml",
         title: "Sitemap",
-        href: `${config.siteUrl}/sitemap.xml`,
+        href: `${config.siteUrl}/sitemap.xml`
     });
 
     // Set default layout as a global component
@@ -53,6 +55,32 @@ export default function (Vue, { router, head, isClient }) {
     Vue.component("font-awesome", FontAwesomeIcon);
 
     Vue.use(ClickOutside);
+
+    Vue.use(VueGoogleMaps, {
+        load: {
+            key: process.env.GRIDSOME_GOOGLE_MAPS_API_KEY,
+            libraries: "places" // This is required if you use the Autocomplete plugin
+            // OR: libraries: 'places,drawing'
+            // OR: libraries: 'places,drawing,visualization'
+            // (as you require)
+
+            /// / If you want to set the version, you can do so:
+            // v: '3.26',
+        },
+
+        /// / If you intend to programmatically custom event listener code
+        /// / (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
+        /// / instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
+        /// / you might need to turn this on.
+        // autobindAllEvents: false,
+
+        /// / If you want to manually install components, e.g.
+        /// / import {GmapMarker} from 'vue2-google-maps/src/components/marker'
+        /// / Vue.component('GmapMarker', GmapMarker)
+        /// / then set installComponents to 'false'.
+        /// / If you want to automatically install all the components this property must be set to 'true':
+        installComponents: true
+    });
 
     if (isClient) {
         VTooltip.options.defaultPlacement = "top-end";

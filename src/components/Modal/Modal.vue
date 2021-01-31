@@ -26,13 +26,13 @@ export default {
   props: {
     showModal: {
       required: true,
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   methods: {
     close() {
       this.$emit("close");
-    },
-  },
+    }
+  }
 };
 </script>

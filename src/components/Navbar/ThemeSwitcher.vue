@@ -15,13 +15,13 @@
 </template>
 
 <script>
-let themes = ["light", "dark"];
+const themes = ["light", "dark"];
 
 export default {
   props: {
     theme: {
-      type: String,
-    },
+      type: String
+    }
   },
 
   computed: {
@@ -29,7 +29,7 @@ export default {
       const currentIndex = themes.indexOf(this.theme);
       const nextIndex = (currentIndex + 1) % themes.length;
       return themes[nextIndex];
-    },
+    }
   },
   methods: {
     toggleTheme() {
@@ -38,12 +38,12 @@ export default {
       window.__setPreferredTheme(themes[nextIndex]);
 
       this.$emit("setTheme", themes[nextIndex]);
-    },
+    }
   },
   async mounted() {
     // set default
     if (typeof window.__theme !== "undefined")
       this.$emit("setTheme", window.__theme);
-  },
+  }
 };
 </script>

@@ -20,30 +20,30 @@
 </template>
 
 <page-query>
-  query($id: ID!) {
-    page: customPage(id: $id) {
-      title
-      subtitle
-      content
-    }
+query($id: ID!) {
+  page: customPage(id: $id) {
+    title
+    subtitle
+    content
   }
+}
 </page-query>
 
 <script>
-import ContentHeader from "~/components/Partials/ContentHeader.vue";
 import mediumZoom from "medium-zoom";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   components: {
-    ContentHeader,
+    ContentHeader
   },
   metaInfo() {
     return {
-      title: this.$page.page.title,
+      title: this.$page.page.title
     };
   },
   mounted() {
     mediumZoom(".post-content img");
-  },
+  }
 };
 </script>

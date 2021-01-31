@@ -1,4 +1,11 @@
+const { addPluralRule } = require("pluralize");
+
 module.exports = {
-    "singleQuote": false,
-    "semi": false
-}
+  printWidth: 80,
+  tabWidth: 2,
+  singleQuote: false,
+  bracketSpacing: true,
+  semi: true,
+  trailingComma: "none",
+  useTabs: false
+};

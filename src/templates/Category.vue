@@ -28,44 +28,44 @@
 </template>
 
 <page-query>
-  query($id: ID!, $page:Int) {
-    category(id: $id) {
-      title
-      path
-      belongsTo(perPage: 6, page: $page) @paginate {
-        totalCount
-        pageInfo {
-          totalPages
-          currentPage
-        }
-        edges {
-          node {
-            ... on Blog {
+query($id: ID!, $page: Int) {
+  category(id: $id) {
+    title
+    path
+    belongsTo(perPage: 6, page: $page) @paginate {
+      totalCount
+      pageInfo {
+        totalPages
+        currentPage
+      }
+      edges {
+        node {
+          ... on Blog {
+            id
+            title
+            image(width: 800)
+            path
+            timeToRead
+            featured
+            humanTime: created(format: "DD MMM YYYY")
+            datetime: created
+            category {
               id
               title
-              image(width: 800)
               path
-              timeToRead
-              featured
-              humanTime: created(format: "DD MMM YYYY")
-              datetime: created
-              category {
-                id
-                title
-                path
-              }
-              author {
-                id
-                name
-                image(width: 64, height: 64, fit: inside)
-                path
-              }
+            }
+            author {
+              id
+              name
+              image(width: 64, height: 64, fit: inside)
+              path
             }
           }
         }
       }
-    }  
+    }
   }
+}
 </page-query>
 
 <script>
@@ -77,21 +77,21 @@ export default {
   components: {
     Pagination,
     CardItem,
-    ContentHeader,
+    ContentHeader
   },
   computed: {
-    postLabel: function () {
-      var pluralize = require("pluralize");
+    postLabel() {
+      const pluralize = require("pluralize");
       return pluralize("post", this.$page.category.belongsTo.totalCount);
     },
-    subTitle: function () {
+    subTitle() {
       return `A collection of ${this.$page.category.belongsTo.totalCount} ${this.postLabel}`;
-    },
+    }
   },
   metaInfo() {
     return {
-      title: this.$page.category.title,
+      title: this.$page.category.title
     };
-  },
+  }
 };
 </script>

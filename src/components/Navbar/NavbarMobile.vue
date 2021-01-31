@@ -41,21 +41,21 @@ import SearchButton from "~/components/Navbar/SearchButton.vue";
 export default {
   props: {
     theme: {
-      type: String,
+      type: String
     },
     showNavigation: {
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   components: {
     ThemeSwitcher,
-    SearchButton,
+    SearchButton
   },
   methods: {
     openNavbarModal() {
       this.$emit("openNavbarModal");
-    },
-  },
+    }
+  }
 };
 </script>
 

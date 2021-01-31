@@ -2,8 +2,7 @@
   <div class="h-16 dark:bg-black bg-white">
     <headroom
       :classes="{
-        initial:
-          'headroom bg-white dark:bg-black border-b dark:border-gray-900',
+        initial: 'headroom bg-white dark:bg-black border-b dark:border-gray-900'
       }"
       :downTolerance="10"
       :upTolerance="20"
@@ -37,25 +36,25 @@
 </template>
 
 <script>
+import { headroom } from "vue-headroom";
 import NavbarDesktop from "~/components/Navbar/NavbarDesktop.vue";
 import NavbarMobile from "~/components/Navbar/NavbarMobile.vue";
 import Modal from "~/components/Modal/Modal.vue";
 import SearchModal from "~/components/Modal/SearchModal.vue";
 import NavbarModal from "~/components/Modal/NavbarMobileModal.vue";
-import { headroom } from "vue-headroom";
 
 export default {
   props: {
     theme: {
-      type: String,
-    },
+      type: String
+    }
   },
-  data: function () {
+  data() {
     return {
       showSearchModal: false,
       showNavbarModal: false,
       headerHeight: 100,
-      navbarUnpinned: false,
+      navbarUnpinned: false
     };
   },
   components: {
@@ -64,7 +63,7 @@ export default {
     Modal,
     SearchModal,
     NavbarModal,
-    headroom,
+    headroom
   },
   methods: {
     openSearchModal() {
@@ -78,14 +77,14 @@ export default {
     },
     closeNavbarModal() {
       this.showNavbarModal = false;
-    },
+    }
   },
   watch: {
     $route(to, from) {
       this.closeNavbarModal();
       this.closeSearchModal();
-    },
-  },
+    }
+  }
 };
 </script>
 

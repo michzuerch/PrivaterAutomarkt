@@ -35,8 +35,8 @@ export default {
     maxVisibleButtons: {
       type: Number,
       required: false,
-      default: 3,
-    },
+      default: 3
+    }
   },
   methods: {
     isFirstPage(currentPage, totalPages) {
@@ -55,7 +55,7 @@ export default {
       return currentPage === 2
         ? `${this.baseUrl}/`
         : `${this.baseUrl}/${currentPage - 1}`;
-    },
+    }
   },
   computed: {
     startPage() {
@@ -78,11 +78,11 @@ export default {
         range.push({
           name: i,
           isDisabled: i === this.currentPage,
-          link: i === 1 ? `${this.baseUrl}/` : `${this.baseUrl}/${i}`,
+          link: i === 1 ? `${this.baseUrl}/` : `${this.baseUrl}/${i}`
         });
       }
       return range;
-    },
-  },
+    }
+  }
 };
 </script>
