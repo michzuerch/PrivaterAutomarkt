@@ -33,16 +33,6 @@ query {
         siteName
         siteDescription
     }
-    allOffice {
-        edges {
-            node {
-                geocode {
-                    lat
-                    lng
-                }
-            }
-        }
-    }
 }
 </static-query>
 

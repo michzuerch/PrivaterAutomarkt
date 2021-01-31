@@ -108,13 +108,6 @@ module.exports = {
             }
         },
         {
-            use: "@gridsome/source-filesystem",
-            options: {
-                typeName: "Office",
-                path: "./content/offices/*.md"
-            }
-        },
-        {
             use: "gridsome-plugin-flexsearch",
             options: {
                 searchFields: ["title", "content"],
