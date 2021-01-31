@@ -1,11 +1,11 @@
 <template>
     <Layout>
-        <div class="container">
+        <div id="container">
             <GmapMap
+                id="map"
                 ref="mapRef"
-                style="width: 600px; height: 300px"
-                :zoom="14"
-                :center="{ lat: 47.7438, lng: 8.95501 }"
+                :zoom="15"
+                :center="{ lat: 47.74305, lng: 8.95492 }"
                 :options="{
                     zoomControl: true,
                     mapTypeControl: true,
@@ -19,7 +19,7 @@
                 <GmapMarker
                     :draggable="false"
                     :clickable="true"
-                    :position="{ lat: 47.7438, lng: 8.95501 }"
+                    :position="{ lat: 47.74305, lng: 8.95492 }"
                 >
                 </GmapMarker>
             </GmapMap>
@@ -72,3 +72,14 @@ export default {
     components: {}
 };
 </script>
+<style>
+#container {
+    margin: 30px 10px 0px 10px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+#map {
+    flex: 1;
+}
+</style>
