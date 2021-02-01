@@ -8,6 +8,7 @@
     "prod": "python3 -m http.server --directory dist/"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
     "autoprefixer": "^10.2.4",
@@ -40,5 +41,12 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "tailwindcss-dark-mode": "^1.1.7"
+=======
+    "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^4.1.1",
+    "tailwindcss": "^2.0.2"
+>>>>>>> 3a6b6b0d093c82c21cc6402b4bfa5f0dd16f2768
   }
 }
