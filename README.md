@@ -1,14 +1,42 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/michzuerch/PrivaterAutomarkt)
+<div align="center">
 
-# Website Privater Automarkt
+<a href="https://www.jammeryhq.com" title="JammeryHQ" target="_blank">
 
-### 1. Install Gridsome CLI tool if you don't have
+  <img src="https://jammeryhq.com/jammeryhq.png" width="128" />
+  
+</a>
 
-`npm install --global @gridsome/cli`
+<p>
+Fast-track your JAMstack development & learning
+</p>
+</div>
 
-### 2. Build
+<hr />
 
-1. `gridsome develop` to run the development version
-2. `gridsome build` to create the production version
+# About this starter
 
-# Privater Automarkt Radolfzell 2021
+Gridsome starter based on the Liebling theme for Ghost. Content is added via markdown, while Tailwind CSS is used for the layout/styling.
+
+## Key features
+
+* Built with Tailwind CSS
+* Responsive 
+* Dark Mode
+* Mega Menu
+* Fulltext search
+* Author Pages
+* Custom Image Processor 
+* Pagination
+* Syntax Highlighting via PrismJS
+
+## Installation
+
+Run the following command to create a new gridsome project 
+
+```
+gridsome create my-blog https://github.com/jammeryhq/gridsome-starter-liebling
+```
+
+## Credits
+
+This starter is based on [Ghost Liebling](https://github.com/eddiesigner/liebling).

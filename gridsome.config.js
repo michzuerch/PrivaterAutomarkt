@@ -1,103 +1,116 @@
-// This is where project configuration and plugin options are located.
+// This is where project configuration and plugin options are located. 
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const path = require('path')
-
-function addStyleResource (rule) {
-  rule.use('style-resource')
-    .loader('style-resources-loader')
-    .options({
-      patterns: [
-        path.resolve(__dirname, './src/assets/sass/_globals.sass'),
-        // or if you use scss
-        path.resolve(__dirname, './src/assets/sass/_globals.scss'),
-        // you can also use a glob if you'd prefer
-        path.resolve(__dirname, './src/assets/sass/*.sass'),
-        // or scss
-        path.resolve(__dirname, './src/assets/sass/*.scss'),
-      ],
-    })
-}
-
 module.exports = {
-  siteName: 'Privater Automarkt',
-  siteDescription: 'Webpage für Privater Automarkt in Radolfzell',
-  siteUrl: 'https://billig-car.de',
+  siteName: 'Gridsome',
+  siteDescription: "An open-source framework to generate awesome pages",
   plugins: [
-      'gridsome-plugin-robots-txt',
-      {
-      use: '@gridsome/plugin-sitemap',
+    {
+      use: 'gridsome-plugin-tailwindcss',
       options: {
-        exclude: ['/exclude'],
-        config: {
-          '/': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
+        tailwindConfig: './tailwind.config.js',
+        purgeConfig: {
+          whitelist: ['svg-inline--fa', 'table', 'table-striped', 'table-bordered', 'table-hover', 'table-sm'],
+          whitelistPatterns: [/fa-$/, /blockquote$/, /code$/, /pre$/, /table$/, /table-$/, /vueperslide$/, /vueperslide-$/]
+        },
+        presetEnvConfig: {},
+        shouldPurge: false,
+        shouldImport: false,
+        shouldTimeTravel: false,
+        shouldPurgeUnusedKeyframes: true,
+      }
+    },
+    {
+      use: 'gridsome-source-static-meta',
+      options: {
+        path: 'content/site/*.json'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Author',
+        path: './content/author/*.md'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Blog',
+        path: './content/blog/**/*.md',
+        refs: {
+          author: 'Author',
+          tags: {
+            typeName: 'Tag',
+            create: true
           },
-          '/cars': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
-          '/contact': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
-          '/financing': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
-          '/impressum': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
-          '/location': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
-          '/registration': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
-          '/services': {
-            changefreq: 'weekly',
-            priority: 0.5,
-            lastmod: '2021-01-07',
-          },
+          category: {
+            typeName: 'Category',
+            create: true
+          }
         }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'CustomPage',
+        path: './content/pages/*.md'
+      }
+    },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        searchFields: ['title', 'content'],
+        collections: [{
+          typeName: 'Blog',
+          indexName: 'Blog',
+          fields: ['title', 'category', 'excerpt', 'content']
+        }]
       }
     }
   ],
-  css: {
-    loaderOptions: {
-      scss: {
-      }
+  transformers: {
+    remark: {
+      plugins: [
+        'remark-autolink-headings',
+        'remark-attr',
+        ['gridsome-plugin-remark-prismjs-all', {
+          noInlineHighlight: false,
+          showLineNumbers: false,
+        }],
+        require('./packages/gridsome-plugin-remark-figure')
+      ],
+      
+      processImages: false
+      
     }
   },
-  devServer: {
-    host: '0.0.0.0',
-    port: 8080
+  templates: {
+    Blog: [{
+      path: '/posts/:title'
+    }],
+    CustomPage: [{
+      path: '/:title',
+      component: '~/templates/CustomPage.vue'
+    }],
+    Category: [{
+      path: '/category/:title',
+      component: '~/templates/Category.vue'
+    }],
+    Author: [{
+      path: '/author/:name',
+      component: '~/templates/Author.vue'
+    }],
+    Tag: [{
+      path: '/tags/:title',
+      component: '~/templates/Tag.vue'
+    }]
   },
-    chainWebpack (config) {
-    // Load variables for all vue-files
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-
-    types.forEach(type => {
-        addStyleResource(config.module.rule('sass').oneOf(type))
-    })
-
-    // or if you use scss
-    types.forEach(type => {
-        addStyleResource(config.module.rule('scss').oneOf(type))
-    })
-    }
+  chainWebpack: config => {
+      config.resolve.alias.set('@pageImage', '@/assets/images');
+  }
 }

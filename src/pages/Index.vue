@@ -1,47 +1,106 @@
 <template>
   <Layout>
-    <Section>
-        <Article>
-            <div class="container">
-                <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-                <g-image alt="Example image" src="~/favicon.png" width="135" />
+      <content-header 
+        :title="$static.metadata.siteName" 
+        :sub="$static.metadata.siteDescription"
+        image="phoenix-han-Nqdh0G8rdCc-unsplash.jpg">
+      </content-header>
 
-                <h1>Herzlich Willkommen!</h1>
-                <h2>Gebrauchtwagen ab 500,- € ---Finanzierung ab 1000,- €</h2>
-                <p>
-                Wir verkaufen auch Ihr Auto!!!
-                </p>
-                <h2>Privat an Privat = günstig</h2>
-                <p>
-                <h3>Öffnungszeiten:</h3>
-                Montag – Freitag : 10.00 - 18.00 Uhr<br>
-                Samstag                : 10.00 - 14.00 Uhr
-                </p>
-                <p>
-                Manfred Schlett<br>
-                Herrenlandstr. 39<br>
-                78315 Radolfzell<br>
-                Tel.  +49 - (0)7732-942407<br>
-                Fax. +49 - (0)7732-942408<br>
-                email. info@billig-car.de<br>
-                Industriegebiet West, gegenüber KAWASAKI +AUTO BOSCH DIENST<br>
-                </p> 
-            </div>
-        </Article>
-    </Section>
+      <div class="container mx-auto">
+          <div class="flex flex-wrap my-4">
+
+          <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>
+
+        
+          <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
+        </div>
+      </div>
   </Layout>
 </template>
 
-<script>
-export default {
-  metaInfo: {
-    title: 'Privater Automarkt'
+<page-query>
+  query($page: Int) {
+    featured: allBlog(limit: 4, filter: { featured: { eq: true } }, sortBy:"created") {
+      totalCount
+      edges {
+        node {
+          id
+          title
+          image(width: 800)
+          path
+          timeToRead
+          humanTime: created(format: "DD MMM YYYY")
+          datetime: created
+          category {
+            id
+            title
+            path
+          }
+          author {
+            id
+            name
+            image(width: 64, height: 64, fit: inside)
+            path
+          }
+        }
+      }
+    }
+    entries: allBlog(perPage: 24, page: $page, sortBy:"created") @paginate {
+      totalCount
+      pageInfo {
+        totalPages
+        currentPage
+      }
+      edges {
+        node {
+          id
+          title
+          image(width: 800)
+          path
+          timeToRead
+          featured
+          humanTime: created(format: "DD MMM YYYY")
+          datetime: created
+          category {
+            id
+            title
+            path
+          }
+          author {
+            id
+            name
+            image(width: 64, height: 64, fit: inside)
+            path
+          }
+        }
+      }
+    }
+  }
+</page-query>
+
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
   }
 }
-</script>
+</static-query>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>
+<script>
+import CardItem from "~/components/Content/CardItem.vue";
+import FeaturedCard from "~/components/Content/FeaturedCard.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
+
+
+export default {
+  metaInfo: {
+    title: "Hello, world!"
+  },
+  components: {
+    CardItem,
+    FeaturedCard,
+    ContentHeader
+  }
+};
+</script>
