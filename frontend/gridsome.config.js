@@ -16,8 +16,8 @@ module.exports = {
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
         loginData: {
-          identifier: '',
-          password: ''
+          identifier: 'michzuerch',
+          password: 'We'
         }
       }
     }
