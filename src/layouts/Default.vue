@@ -1,39 +1,47 @@
 <template>
-    <div id="app" class="dark:bg-black">
-        <navbar @setTheme="setTheme" :theme="this.theme"></navbar>
-
-        <slot />
-
-        <v-footer></v-footer>
+  <div class="layout flex flex-col relative min-h-screen">
+    <header class="flex items-center mb-6 h-20">
+      <div class="container flex items-center justify-between">
+        <div class="app-logo">
+          <g-link to="/">
+            <strong>{{ $static.metadata.siteName }}</strong>
+          </g-link>
+        </div>
+        <AppNav />
+        <ThemeToggle />
+      </div>
+    </header>
+    <div class="app-slot container mb-8">
+      <slot />
     </div>
+    <AppFooter />
+  </div>
 </template>
 
 <static-query>
-query {
+  query {
     metadata {
-        siteName
+      siteName
     }
-}
+  }
 </static-query>
 
 <script>
-import Navbar from "~/components/Navbar/Navbar.vue";
-import VFooter from "~/components/Partials/Footer.vue";
+import AppNav from '@/components/AppNav.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import ThemeToggle from '@/components/ThemeToggle.vue'
 
 export default {
-    data() {
-        return {
-            theme: "light"
-        };
-    },
-    components: {
-        Navbar,
-        VFooter
-    },
-    methods: {
-        setTheme(mode) {
-            this.theme = mode;
-        }
-    }
-};
+  components: {
+    AppNav,
+    AppFooter,
+    ThemeToggle,
+  },
+}
 </script>
+
+<style>
+.container {
+  @apply relative mx-auto w-full;
+}
+</style>

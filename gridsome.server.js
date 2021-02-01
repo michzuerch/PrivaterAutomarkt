@@ -1,68 +1,41 @@
-const _ = require("lodash");
+const dataStore = require('./data-store')
+const {
+  createPagesQuery,
+  createPagesWithPagination,
+} = require('./src/utils/createPages')
 
-module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-  });
+module.exports = function(api) {
+  // fix Type with name "SanityDocument" does not exists error
+  api.createSchema(({ addSchemaTypes }) => {
+    addSchemaTypes(`
+      type SanityDocument implements Node @infer {
+        id: ID!
+      }
+    `)
+  })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  });
-
-  api.onCreateNode((options) => {
-    if (options.internal.typeName === "Blog") {
-      options.featured = options.featured ? options.featured : false;
-      options.tags =
-        typeof options.tags === "string"
-          ? options.tags.split(",").map((string) => string.trim())
-          : options.tags;
-      options.author =
-        typeof options.author === "string"
-          ? options.author.split(",").map((string) => string.trim())
-          : options.author;
-      return {
-        ...options
-      };
-    }
-    if (options.internal.typeName === "CustomPage") {
-      options.subtitle = options.subtitle || "";
-    }
-  });
+  api.loadSource(store => {
+    // Use the Data store API here: https://gridsome.org/docs/data-store-api
+    store.addMetadata('sanityOptions', dataStore.sanity)
+  })
 
   api.createPages(async ({ graphql, createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api
-    const { data } = await graphql(`
-      {
-        allBlog {
-          edges {
-            node {
-              id
-              path
-              tags {
-                title
-              }
-            }
-          }
-        }
-      }
-    `);
+    const { data } = await graphql(createPagesQuery)
 
-    data.allBlog.edges.forEach(({ node }) => {
-      // without the map, you will get an 500 error
-      // because the graphql filter requires an array
-      // not an object
-      const tags = _.map(node.tags, function (tag) {
-        return tag.title;
-      });
+    const allSanityPosts = data.allSanityPost.edges
+    const allSanityProjects = data.allSanityProject.edges
 
-      createPage({
-        path: node.path,
-        component: "./src/templates/BlogPost.vue",
-        context: {
-          recordId: node.id,
-          tags
-        }
-      });
-    });
-  });
-};
+    createPagesWithPagination({
+      edges: allSanityPosts,
+      component: './src/templates/Post.vue',
+      path: 'blog',
+      createPage,
+    })
+    createPagesWithPagination({
+      edges: allSanityProjects,
+      component: './src/templates/Project.vue',
+      path: 'projects',
+      createPage,
+    })
+  })
+}

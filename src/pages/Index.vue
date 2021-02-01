@@ -1,116 +1,87 @@
-/* eslint-disable import/no-unresolved */
 <template>
   <Layout>
-    <content-header
-      :title="$static.metadata.siteName"
-      :sub="$static.metadata.siteDescription"
-      image="hero.jpg"
-    >
-    </content-header>
-
-    <div class="container mx-auto">
-      <div class="flex flex-wrap my-4">
-        <FeaturedCard
-          v-if="$page.featured.totalCount > 0"
-          :records="$page.featured.edges"
-        />
-
-        <CardItem
-          v-for="edge in $page.entries.edges"
-          :key="edge.node.id"
-          :record="edge.node"
-        />
-      </div>
-    </div>
+    <AppBanner heading="Akarui" subheading="start using:">
+      <p class="p-sm">
+        A gridsome starter inspired by the
+        <a
+          class="inline-flex border-b-4 border-primary leading-tight"
+          href="https://fabrx.co/brightkit/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >bright kit.</a
+        >
+        Made with tailwind css. Integrates with sanity.io
+      </p>
+    </AppBanner>
+    <section v-if="$page.posts.edges.length" class="mx-auto pt-10">
+      <h2 class="font-bold mb-4 text-3xl">Latests Posts</h2>
+      <PostList :posts="$page.posts.edges" />
+    </section>
+    <section v-if="$page.projects.edges.length" class="mx-auto pt-10">
+      <h2 class="font-bold mb-4 text-3xl">Latest Project</h2>
+      <ProjectList :projects="$page.projects.edges" />
+    </section>
   </Layout>
 </template>
 
 <page-query>
-query($page: Int) {
-  featured: allBlog(
-    limit: 4
-    filter: { featured: { eq: true } }
-    sortBy: "created"
-  ) {
-    totalCount
-    edges {
-      node {
-        id
-        title
-        image(width: 800)
-        path
-        timeToRead
-        humanTime: created(format: "DD MMM YYYY")
-        datetime: created
-        category {
+  query{
+    posts: allSanityPost (sortBy: "publishedAt" limit: 3) {
+      edges {
+        node {
           id
+          slug {
+            current
+          }
+          author {
+            name
+          }
           title
-          path
+          publishedAt(format: "MMMM D, YYYY")
+          mainImage {
+            asset {
+              id
+              localFile(width: 660, quality: 80)
+              url
+            }
+          }
         }
-        author {
+      }
+    }
+    projects: allSanityProject (sortBy: "completed" limit: 1) {
+      edges {
+        node {
           id
-          name
-          image(width: 64, height: 64, fit: inside)
-          path
+          slug {
+            current
+          }
+          title
+          mainImage {
+            asset {
+              id
+              localFile(width: 1100, quality: 80)
+              url
+            }
+          }
         }
       }
     }
   }
-  entries: allBlog(perPage: 24, page: $page, sortBy: "created") @paginate {
-    totalCount
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id
-        title
-        image(width: 800)
-        path
-        timeToRead
-        featured
-        humanTime: created(format: "DD MMM YYYY")
-        datetime: created
-        category {
-          id
-          title
-          path
-        }
-        author {
-          id
-          name
-          image(width: 64, height: 64, fit: inside)
-          path
-        }
-      }
-    }
-  }
-}
 </page-query>
 
-<static-query>
-query {
-  metadata {
-    siteName
-    siteDescription
-  }
-}
-</static-query>
-
 <script>
-import CardItem from "~/components/Content/CardItem.vue";
-import FeaturedCard from "~/components/Content/FeaturedCard.vue";
-import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import AppBanner from '@/components/AppBanner'
+import PostList from '@/components/Blog/PostList'
+import ProjectList from '@/components/Project/ProjectList'
 
 export default {
-  metaInfo: {
-    title: "Privater Automarkt Radolfzell"
-  },
   components: {
-    CardItem,
-    FeaturedCard,
-    ContentHeader
-  }
-};
+    AppBanner,
+    PostList,
+    ProjectList,
+  },
+  metaInfo: {
+    title: 'Home',
+  },
+}
 </script>
