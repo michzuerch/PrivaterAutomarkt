@@ -1,18 +1,3 @@
-<div align="center">
-
-<a href="https://www.jammeryhq.com" title="JammeryHQ" target="_blank">
-
-  <img src="https://jammeryhq.com/jammeryhq.png" width="128" />
-  
-</a>
-
-<p>
-Fast-track your JAMstack development & learning
-</p>
-</div>
-
-<hr />
-
 # About this starter
 
 Gridsome starter based on the Liebling theme for Ghost. Content is added via markdown, while Tailwind CSS is used for the layout/styling.
@@ -33,10 +18,15 @@ Gridsome starter based on the Liebling theme for Ghost. Content is added via mar
 
 Run the following command to create a new gridsome project 
 
-```
+```batch
 gridsome create my-blog https://github.com/jammeryhq/gridsome-starter-liebling
 ```
 
 ## Credits
 
 This starter is based on [Ghost Liebling](https://github.com/eddiesigner/liebling).
+
+
+## Working with netflify
+
+Yeah!!
