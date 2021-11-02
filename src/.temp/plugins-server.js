@@ -1,6 +1,6 @@
-import plugin_gridsome_plugin_tailwindcss_5 from "/home/user/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-tailwindcss/gridsome.client.js"
-import plugin_gridsome_plugin_netlify_cms_8 from "/home/user/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-netlify-cms/gridsome.client.js"
-import plugin_gridsome_plugin_flexsearch_13 from "/home/user/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-flexsearch/gridsome.client.js"
+import plugin_gridsome_plugin_tailwindcss_5 from "/home/michzuerch/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-tailwindcss/gridsome.client.js"
+import plugin_gridsome_plugin_netlify_cms_8 from "/home/michzuerch/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-netlify-cms/gridsome.client.js"
+import plugin_gridsome_plugin_flexsearch_13 from "/home/michzuerch/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-flexsearch/gridsome.client.js"
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
   },
   {
     run: plugin_gridsome_plugin_netlify_cms_8,
-    options: {"publicPath":"/admin","htmlTitle":"Content Editor","configPath":"src/admin/config.yml","modulePath":"/home/user/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-netlify-cms/lib/cms.js","htmlPath":"/home/user/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-netlify-cms/templates/index.html","injectScript":true,"enableIdentityWidget":true,"debug":false}
+    options: {"publicPath":"/admin","htmlTitle":"Content Editor","configPath":"src/admin/config.yml","modulePath":"/home/michzuerch/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-netlify-cms/lib/cms.js","htmlPath":"/home/michzuerch/Source/PrivaterAutomarkt/node_modules/gridsome-plugin-netlify-cms/templates/index.html","injectScript":true,"enableIdentityWidget":true,"debug":false}
   },
   {
     run: plugin_gridsome_plugin_flexsearch_13,
